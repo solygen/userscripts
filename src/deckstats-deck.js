@@ -17,14 +17,19 @@
     //remove flag and sum
     $($('.cardtable').find('.card_price.header')[1]).empty();
     $($('.cardtable').find('.deck_footer').find('.card_price')[1]).empty()
-    //bigger card preview (only works if already added to dom)
-    $('#kartenOverlay')
-        .css('border', '0px')
-        .css('width', 'auto');
-    $('#kartenOverlayBild')
-        .css('height', '400px')
-        .css('width', '280px');
-    $('#kartenOverlayContent')
-        .css('display', 'none');
+    
+    //bigger card preview 
+    var id = setInterval(function() {
+        $('#kartenOverlay')
+            .css('border', '0px')
+            .css('width', 'auto');
+        $('#kartenOverlayBild')
+            .css('height', '400px')
+            .css('width', '280px');
+        $('#kartenOverlayContent')
+            .css('display', 'none');
+        if($('#kartenOverlay').length)
+            clearInterval(id);
+        }, 1000);
 })();
 
