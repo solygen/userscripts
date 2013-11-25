@@ -14,5 +14,8 @@
         // href = href.replace('http://www.mtg-forum.de/db/magiccard.php?lng=de&card=', 'http://magiccards.info/query?q=');
         // $(row.find('.cardlink')).attr('href', href);
     }
+    //remove flag and sum
+    $($('.cardtable').find('.card_price.header')[1]).empty();
+    $($('.cardtable').find('.deck_footer').find('.card_price')[1]).empty()
 })();
 
