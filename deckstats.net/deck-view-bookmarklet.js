@@ -35,11 +35,14 @@
     
     //write proxie block
     if (proxies.length) {
+        proxies.sort(function (a, b) {
+            return a.substr(2,1).charCodeAt(0) - b.substr(2,1).charCodeAt(0);
+        });
         $('.custom').remove();
         var node = $($('div.ui-widget')[1]).clone();
         //set content
         $(node.find('p')[0]).empty()
-                            .append(proxies.sort().join('<br>'));
+                            .append(proxies.join('<br>'));
         //remove title and add bottom margin
         node.attr('title', '')
             .css('margin', '1em .5em');
