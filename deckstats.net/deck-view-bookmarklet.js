@@ -12,8 +12,10 @@
         //replace us price
         $(row.find('.card_price')[1]).text(each + ' \u20AC');
         //log proxies
-        if (comment && comment.length === 1)
-            proxies.push(comment + ' ' + name);
+        if (comment && (comment.length === 1 || comment === 'proxy')) {
+            comment.length === 1 ? proxies.push(comment + ' ' + name) : proxies.push(num + ' ' + name);
+        }
+            
         //reorder edition
         var span = $($(row.find('.info_link'))[0]).find('span').remove(),
             leg = $($(row.find('.info_link'))[0]).text().trim().replace('(', '').replace(')', '').trim(),
