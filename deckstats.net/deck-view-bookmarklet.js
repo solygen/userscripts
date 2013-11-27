@@ -50,6 +50,18 @@
         $('.inhalt').prepend(node.addClass('custom'));
     }
     
+    //list view sort by name
+    $('.decks_list.decks_list_narrow').find('.decks_list_subtitle').remove();
+    var lines = $('.decks_list.decks_list_narrow').find('tr').remove();
+    lines.sort(function (a, b) {
+        var valueA = $(a).find('a').text().trim(),
+            valueB = $(b).find('a').text().trim();
+        if(valueA < valueB) return -1;
+        if(valueA > valueB) return 1;
+        return 0;
+    });
+    $('.decks_list.decks_list_narrow').find('tbody').append(lines);
+    
     //bigger card preview 
     var id = setInterval(function() {
         $('#kartenOverlay')
