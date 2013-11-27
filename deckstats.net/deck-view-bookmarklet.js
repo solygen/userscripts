@@ -13,6 +13,7 @@
         $(row.find('.card_price')[1]).text(each + ' \u20AC');
         //log proxies
         if (comment && (comment.length === 1 || comment === 'proxy')) {
+            $(row.find('.hbtronix_icon')[0]).prop('src', 'http://i.hbtronix.de/picture_empty.png');
             comment.length === 1 ? proxies.push(comment + ' ' + name) : proxies.push(num + ' ' + name);
         }
             
