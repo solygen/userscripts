@@ -1,5 +1,6 @@
 (function() {
-    var cards = $('.cardtable').find('tr.deck_card');
+    var cards = $('.cardtable').find('tr.deck_card'),
+        proxies = [];
 
     for (var i = 0; i < cards.length; i++) {
         var row = $(cards[i]),
@@ -12,7 +13,7 @@
         $(row.find('.card_price')[1]).text(each + ' \u20AC');
         //log proxies
         if (comment && comment.length === 1)
-            console.log(comment + ' ' + name);
+            proxies.push(comment + ' ' + name);
         //reorder edition
         var span = $($(row.find('.info_link'))[0]).find('span').remove(),
             leg = $($(row.find('.info_link'))[0]).text().trim().replace('(', '').replace(')', '').trim(),
@@ -29,6 +30,20 @@
     //remove flag and sum
     $($('.cardtable').find('.card_price.header')[1]).empty();
     $($('.cardtable').find('.deck_footer').find('.card_price')[1]).empty()
+    
+    //write proxie block
+    if (proxies.length) {
+        $('.custom').remove();
+        var node = $($('div.ui-widget')[1]).clone();
+        //set content
+        $(node.find('p')[0]).empty()
+                            .append(proxies.sort().join('<br>'));
+        //remove title and add bottom margin
+        node.attr('title', '')
+            .css('margin', '1em .5em');
+        //prepend to main container
+        $('.inhalt').prepend(node.addClass('custom'));
+    }
     
     //bigger card preview 
     var id = setInterval(function() {
