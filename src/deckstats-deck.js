@@ -9,6 +9,11 @@
             each = (price/num).toFixed(2);
         //replace us price
         $(row.find('.card_price')[1]).text(each + ' \u20AC');
+        //reorder edition
+        var span = $($(row.find('.info_link'))[0]).find('span').remove();
+        var leg = $($(row.find('.info_link'))[0]).text().trim().replace('(', '').replace(')', '');
+        $($(row.find('.info_link'))[0]).text(leg + ', ');
+        $($(row.find('.info_link'))[0]).append(span);
         //replace link
         // var href = $(row.find('.cardlink')).attr('href');
         // href = href.replace('http://www.mtg-forum.de/db/magiccard.php?lng=de&card=', 'http://magiccards.info/query?q=');
