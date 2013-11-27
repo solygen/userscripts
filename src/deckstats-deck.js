@@ -6,9 +6,13 @@
             price = $(row.find('.card_price')[0]).text().trim().replace('\u20AC',''),
             num = $(row.find('.card_amount')[0]).text().trim(),
             name = $(row.find('a')[0]).text().trim(),
-            each = (price/num).toFixed(2);
+            each = (price/num).toFixed(2),
+            comment =  $(row.find('.hbtronix_icon')[0]).attr('title');
         //replace us price
         $(row.find('.card_price')[1]).text(each + ' \u20AC');
+        //log proxies
+        if (comment && comment.length === 1)
+            console.log(comment + ' ' + name);
         //reorder edition
         var span = $($(row.find('.info_link'))[0]).find('span').remove(),
             leg = $($(row.find('.info_link'))[0]).text().trim().replace('(', '').replace(')', '').trim(),
