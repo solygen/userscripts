@@ -1,6 +1,9 @@
 (function() {
+    var RARE = 'rgb(196, 159, 39)', UNCOMMON = 'rgb(119, 119, 119)', COMMON = 'rgb(0, 0, 0)';
+    
     var cards = $('.cardtable').find('tr.deck_card'),
-        proxies = [];
+        proxies = [], 
+        types = {rare: [], uncommon: [], common: []};
 
     for (var i = 0; i < cards.length; i++) {
         var row = $(cards[i]),
@@ -21,6 +24,14 @@
         var span = $($(row.find('.info_link'))[0]).find('span').remove(),
             leg = $($(row.find('.info_link'))[0]).text().trim().replace('(', '').replace(')', '').trim(),
             cell = $($(row.find('.info_link'))[0]);
+        
+        if (span.css('color') === RARE)
+            types.rare.push(num + ' ' + name);
+        if (span.css('color') === UNCOMMON)
+            types.uncommon.push(num + ' ' + name);
+        if (span.css('color') === COMMON)
+            types.common.push(num + ' ' + name);
+        
         span.text(span.text().trim());
         cell.text(leg + ' (')
             .append(span)
@@ -62,6 +73,9 @@
         return 0;
     });
     $('.decks_list.decks_list_narrow').find('tbody').append(lines);
+    
+    //types
+    console.log(types);
     
     //bigger card preview 
     var id = setInterval(function() {
