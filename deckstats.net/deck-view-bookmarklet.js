@@ -44,9 +44,10 @@
             .append(span)
             .append(')');
         //replace link
-        // var href = $(row.find('.cardlink')).attr('href');
-        // href = href.replace('http://www.mtg-forum.de/db/magiccard.php?lng=de&card=', 'http://magiccards.info/query?q=');
-        // $(row.find('.cardlink')).attr('href', href);
+        var href = $(row.find('.cardlink')).attr('href'),
+            card = href.split('=').pop(),
+            newl = 'http://magiccards.info/query?q=' + card + '&v=card&s=cname&card=' + card;
+        $(row.find('.cardlink')).attr('href', newl);
     }
     //remove flag and sum
     $($('.cardtable').find('.card_price.header')[1]).empty();
