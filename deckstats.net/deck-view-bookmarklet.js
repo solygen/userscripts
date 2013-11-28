@@ -1,9 +1,13 @@
 (function() {
-    var RARE = 'rgb(196, 159, 39)', UNCOMMON = 'rgb(119, 119, 119)', COMMON = 'rgb(0, 0, 0)';
+    var RARE = 'rgb(196, 159, 39)', 
+        UNCOMMON = 'rgb(119, 119, 119)', 
+        COMMON = 'rgb(0, 0, 0)', 
+        MYTHIC = 'rgb(132, 47, 7)', 
+        BASIC = 'rgb(4, 26, 72)';
     
     var cards = $('.cardtable').find('tr.deck_card'),
         proxies = [], 
-        types = {rare: [], uncommon: [], common: []};
+        rarity = {rare: [], uncommon: [], common: [], mythic: [], basic: []};
 
     for (var i = 0; i < cards.length; i++) {
         var row = $(cards[i]),
@@ -26,12 +30,15 @@
             cell = $($(row.find('.info_link'))[0]);
         
         if (span.css('color') === RARE)
-            types.rare.push(num + ' ' + name);
+            rarity.rare.push(num + ' ' + name);
         if (span.css('color') === UNCOMMON)
-            types.uncommon.push(num + ' ' + name);
+            rarity.uncommon.push(num + ' ' + name);
         if (span.css('color') === COMMON)
-            types.common.push(num + ' ' + name);
-        
+            rarity.common.push(num + ' ' + name);
+        if (span.css('color') === MYTHIC)
+            rarity.mythic.push(num + ' ' + name);
+        if (span.css('color') === BASIC)
+            rarity.basic.push(num + ' ' + name);
         span.text(span.text().trim());
         cell.text(leg + ' (')
             .append(span)
@@ -75,7 +82,7 @@
     $('.decks_list.decks_list_narrow').find('tbody').append(lines);
     
     //types
-    console.log(types);
+    console.log(rarity);
     
     //bigger card preview 
     var id = setInterval(function() {
