@@ -1,0 +1,10 @@
+(function() {
+    var js = document.createElement('script');
+    js.src = "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js";
+    document.head.appendChild(js);
+
+    var start = $($.parseHTML(chart_Line59.getVariable('dataXML'))).find('line').attr('startvalue'),
+        end = $($.parseHTML(chart_Line59.getVariable('dataXML'))).find('line').attr('endvalue'),
+        mid = parseFloat((start + end)).toFixed(2);
+
+});
