@@ -46,7 +46,7 @@
         //replace link
         var href = $(row.find('.cardlink')).attr('href'),
             card = href.split('=').pop(),
-            newl = 'http://magiccards.info/query?q=' + card + '&v=card&s=cname&card=' + card;
+            newl = 'https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=' + card + '&v=card&s=cname&card=' + card;
         $(row.find('.cardlink')).attr('href', newl);
     }
     //remove flag and sum
