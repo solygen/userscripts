@@ -98,5 +98,11 @@
         if($('#kartenOverlay').length)
             clearInterval(id);
         }, 1000);
+    
+    //set banner link to list view
+    var listview = $($('ul#user_menu a')[0]).attr('href');
+    if (listview)
+        $($('#header_left a')).attr('href', listview)
+    
 })();
 
