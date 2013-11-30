@@ -21,5 +21,5 @@ javascript:(function() {var jsCode = document.createElement('script');jsCode.set
 + example: https://www.magickartenmarkt.de/Power_Conduit_Mirrodin.c1p229.prod
 
 ```
-javascript:(function() {var jsCode = document.createElement('script');jsCode.setAttribute('src', 'https://raw.github.com/solygen/bookmarklets/master/magickartenmarkt.de/deck-view-bookmarklet.js');document.body.appendChild(jsCode)})();
+javascript:(function() {var jsCode = document.createElement('script');jsCode.setAttribute('src', 'https://raw.github.com/solygen/bookmarklets/master/magickartenmarkt.de/detail-view-bookmarklet.js');document.body.appendChild(jsCode)})();
 ```
