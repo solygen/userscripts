@@ -9,7 +9,7 @@
 // @include	https://es.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 // @include	https://id.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
-// @downloardURL https://raw.github.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/metacard-bookmarklet.js
+// @downloardURL https://raw.github.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/metacard-userscript.js
 // @license	MIT
 
 // ==/UserScript==
