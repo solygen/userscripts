@@ -6,19 +6,17 @@
 // @repository   https://github.com/solygen/userscripts-and-bookmarklets.git
 // @license      MIT
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
-
+//
 // @include      https://www.magickartenmarkt.de/?mainPage=showMetacard&idMetacard=*
 // @include      https://www.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 // @include      https://fr.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 // @include      https://es.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 // @include      https://id.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
-
-// @updateURL    https://raw.github.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/metacard-bookmarklet.js
-// @downloadURL  https://raw.github.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/metacard-bookmarklet.js
+//
+// @updateURL    https://raw.github.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/metacard.user.js
+// @downloadURL  https://raw.github.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/metacard.user.js
 // @homepage     https://github.com/solygen/userscripts-and-bookmarklets
-
->>>>>>> intend
-
+//
 // ==/UserScript==
 
 //redirect to first 'appears in' link

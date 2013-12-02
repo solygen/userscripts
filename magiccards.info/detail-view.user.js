@@ -7,11 +7,12 @@
 // @license      MIT
 //
 // @include      http://magiccards.info/*.html
+// @include      http://magiccards.info/query?*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magiccards.info/detail-view-bookmarklet.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magiccards.info/detail-view-bookmarklet.js
+// @updateURL    https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magiccards.info/detail-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magiccards.info/detail-view.user.js
 // @homepage     https://github.com/solygen/userscripts-and-bookmarklets
-
+//
 // ==/UserScript==
 
 'use strict';
@@ -19,27 +20,33 @@
 var cardname, image, container, link,
     url = ((navigator.language || navigator.userLanguage) === 'de' ? 'http://www.magickartenmarkt.de' : 'http://www.magiccardmarket.eu'),
     query = '/?mainPage=showSearchResult&searchFor=',
-    getImage = function () {
-        var list = document.getElementsByTagName('img');
+    getImages = function () {
+        var list = document.getElementsByTagName('img'),
+            images = [];
         for (var i = 0; i < list.length; i++) {
             if(list[i].getAttribute('src').indexOf('jpg') >= 0) {
-                return list[i];
+                images.push(list[i]);
             }
         }
+        return images;
     },
     copyToClipboard = function () {
         window.prompt ('Copy to clipboard: Ctrl+C, Enter', name);
     };
 
 //get image
-image = getImage();
-cardname = image.getAttribute('alt');
-container = image.parentNode;
+images = getImages();
+for (var i = 0; i < images.length; i++) {
+    var image = images[i];
 
-//create link
-link = document.createElement('a');
-link.href = url + query + cardname;
+    cardname = image.getAttribute('alt');
+    container = image.parentNode;
 
-//create dom struct (container -> link -> image)
-link.appendChild(image);
-container.appendChild(link);
+    //create link
+    link = document.createElement('a');
+    link.href = url + query + cardname;
+
+    //create dom struct (container -> link -> image)
+    link.appendChild(image);
+    container.appendChild(link);
+}

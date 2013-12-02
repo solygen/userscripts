@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MKM/MCM: add average card price (sold)
-// @description  magiccardmarket.eu and magickartenmarkt.de
+// @description  magiccardmarket.eu, magickartenmarkt.de
 // @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts-and-bookmarklets
 // @repository   https://github.com/solygen/userscripts-and-bookmarklets.git
@@ -13,9 +13,9 @@
 // @include      https://es.magiccardmarket.eu/*.prod
 // @include      https://id.magiccardmarket.eu/*.prod
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/detail-view-bookmarklet.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/detail-view-bookmarklet.js
-// @homepage     https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/detail-view-bookmarklet.js
+// @updateURL    https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/detail-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/detail-view.user.js
+// @homepage     https://github.com/solygen/userscripts-and-bookmarklets
 
 // ==/UserScript==
 
