@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skip meta card page
 // @description  magiccardmarket.eu and magickartenmarkt.de
-// @version      0.0.2
+// @version      0.0.3
 // @namespace    https://github.com/solygen/userscripts-and-bookmarklets
 // @repository   https://github.com/solygen/userscripts-and-bookmarklets.git
 // @license      MIT
@@ -13,11 +13,11 @@
 // @include      https://es.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 // @include      https://id.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 //
-// @include      https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=*
-// @include      https://www.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
-// @include      https://fr.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
-// @include      https://es.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
-// @include      https://id.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
+// @include      https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=*&redirect=true
+// @include      https://www.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*&redirect=true
+// @include      https://fr.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*&redirect=true
+// @include      https://es.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*&redirect=true
+// @include      https://id.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*&redirect=true
 //
 // @updateURL    https://raw.github.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/metacard.user.js
 // @downloadURL  https://raw.github.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/metacard.user.js

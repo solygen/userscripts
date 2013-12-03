@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         link to mkm/mcm when clicking on card image
 // @description  magiccards.info
-// @version      0.0.2
+// @version      0.0.3
 // @namespace    https://github.com/solygen/userscripts-and-bookmarklets
 // @repository   https://github.com/solygen/userscripts-and-bookmarklets.git
 // @license      MIT
@@ -56,9 +56,9 @@ for (var i = 0; i < images.length; i++) {
     cardname = image.getAttribute('alt');
     container = image.parentNode;
 
-    //create link
+    //create link and flag url for mkm/mcm user script
     link = document.createElement('a');
-    link.href = url + query + cardname;
+    link.href = url + query + cardname + '&redirect=true';
     link.title = url;
 
     //create dom hierarchy (container > link > image)
