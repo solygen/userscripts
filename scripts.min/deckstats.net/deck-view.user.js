@@ -2,16 +2,16 @@
 // @name         different tweaks
 // @description  deckstats.net
 // @version      0.0.1
-// @namespace    https://github.com/solygen/userscripts-and-bookmarklets
-// @repository   https://github.com/solygen/userscripts-and-bookmarklets.git
+// @namespace    https://github.com/solygen/userscripts
+// @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 //
 // @include      http://deckstats.net/decks/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/deckstats.net/deck-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/deckstats.net/deck-view.user.js
-// @homepage     https://github.com/solygen/userscripts-and-bookmarklets
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/deckstats.net/deck-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/deckstats.net/deck-view.user.js
+// @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
 (function(){"use strict";var a="rgb(196, 159, 39)",b="rgb(119, 119, 119)",c="rgb(0, 0, 0)",d="rgb(132, 47, 7)",e="rgb(4, 26, 72)",f={},g={proxies:[],rarity:{rare:[],uncommon:[],common:[],mythic:[],basic:[]}},h={remove:function(){var a=$(".cardtable");//remove flag and sum
 $(a.find(".card_price.header")[1]).empty(),$(a.find(".deck_footer").find(".card_price")[1]).empty()},set:function(){//set banner link to list view
