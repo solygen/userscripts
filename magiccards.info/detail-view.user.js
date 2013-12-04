@@ -16,52 +16,54 @@
 //
 // ==/UserScript==
 
-'use strict';
+(function () {
 
-var cardname, images, container, link,
-    url = ((navigator.language || navigator.userLanguage) === 'de' ? 'http://www.magickartenmarkt.de' : 'http://www.magiccardmarket.eu'),
-    query = '/?mainPage=showSearchResult&searchFor=',
-    getImages = function () {
-        var list = document.getElementsByTagName('img'),
-            images = [];
-        for (var i = 0; i < list.length; i++) {
-            if (list[i].getAttribute('src').indexOf('jpg') >= 0) {
-                images.push(list[i]);
+    'use strict';
+
+    var cardname, images, container, link,
+        url = ((navigator.language || navigator.userLanguage) === 'de' ? 'http://www.magickartenmarkt.de' : 'http://www.magiccardmarket.eu'),
+        query = '/?mainPage=showSearchResult&searchFor=',
+        getImages = function () {
+            var list = document.getElementsByTagName('img'),
+                images = [];
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].getAttribute('src').indexOf('jpg') >= 0) {
+                    images.push(list[i]);
+                }
             }
-        }
-        return images;
-    },
-    copyToClipboard = function () {
-        window.prompt ('Copy to clipboard: Ctrl+C, Enter', name);
-    };
-
-//get image
-images = getImages();
-
-//process each card image
-for (var i = 0; i < images.length; i++) {
-    var image = images[i];
-
-    //add hover effect
-    $(image).hover(
-            function () {
-                this.setAttribute("style", "opacity: 0.90; border: 1px solid black");
+            return images;
+        },
+        // copyToClipboard = function () {
+        //     window.prompt ('Copy to clipboard: Ctrl+C, Enter', name);
+        // },
+        enter = function () {
+                this.setAttribute('style', 'opacity: 0.90; border: 1px solid black');
             },
-            function () {
-                this.setAttribute("style", "opacity: 1; border: 1px solid black");
-            }
-        );
+        leave = function () {
+                this.setAttribute('style', 'opacity: 1; border: 1px solid black');
+            };
 
-    //gather data
-    cardname = image.getAttribute('alt');
-    container = image.parentNode;
+    //get image
+    images = getImages();
 
-    //create link and flag url for mkm/mcm user script
-    link = document.createElement('a');
-    link.href = url + query + cardname + '&redirect=true';
-    link.title = url;
+    //process each card image
+    for (var i = 0; i < images.length; i++) {
+        var image = images[i];
 
-    //create dom hierarchy (container > link > image)
-    link.appendChild(image);
-    container.appendChild(link);
-}
+        //add hover effect
+        $(image).hover(enter, leave);
+
+        //gather data
+        cardname = image.getAttribute('alt');
+        container = image.parentNode;
+
+        //create link and flag url for mkm/mcm user script
+        link = document.createElement('a');
+        link.href = url + query + cardname + '&redirect=true';
+        link.title = url;
+
+        //create dom hierarchy (container > link > image)
+        link.appendChild(image);
+        container.appendChild(link);
+    }
+})();

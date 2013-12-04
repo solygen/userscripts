@@ -15,26 +15,33 @@
 
 // ==/UserScript==
 
-//hide timestamp
-$('.decks_list.decks_list_narrow')
-    .find('.decks_list_subtitle')
-    .remove();
+(function () {
 
-//detach rows
-var lines = $('.decks_list.decks_list_narrow')
+    'use strict';
+
+    var lines = [];
+
+    //hide timestamp
+    $('.decks_list.decks_list_narrow')
+        .find('.decks_list_subtitle')
+        .remove();
+
+    //detach rows
+    lines = $('.decks_list.decks_list_narrow')
             .find('tr')
             .remove();
 
-//sort
-lines.sort(function (a, b) {
-    var valueA = $(a).find('a').text().trim(),
-        valueB = $(b).find('a').text().trim();
-    if(valueA < valueB) return -1;
-    if(valueA > valueB) return 1;
-    return 0;
-});
+    //sort
+    lines.sort(function (a, b) {
+        var valueA = $(a).find('a').text().trim(),
+            valueB = $(b).find('a').text().trim();
+        if(valueA < valueB) return -1;
+        if(valueA > valueB) return 1;
+        return 0;
+    });
 
-//attach rows again
-$('.decks_list.decks_list_narrow')
-    .find('tbody')
-    .append(lines);
+    //attach rows again
+    $('.decks_list.decks_list_narrow')
+        .find('tbody')
+        .append(lines);
+})();

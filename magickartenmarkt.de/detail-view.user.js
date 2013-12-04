@@ -19,21 +19,26 @@
 
 // ==/UserScript==
 
-//get chart node
-var tmp = $($.parseHTML($('embed').attr('flashvars').split('dataXML=').splice(1,1)[0])).find('line');
+(function () {
 
-//extract data
-var start = tmp.attr('startvalue'),
-    end = tmp.attr('endvalue'),
-    mid = String(parseFloat((start + end)).toFixed(2) + '  €').replace('.', ',');
+    'use strict';
 
-//remoe old one
-$('.custom').remove();
-//add data to dom
-var row = $($('.availTable').find('tr')[0]).clone();
-row.css('font-size', 'larger')
-    .css('color', 'chartreuse')
-    .addClass('custom');
-row.find('.cell_0_1').text(mid);
-row.find('.cell_0_0').text('Durchschnittspreis VK');
-$('.availTable').prepend(row);
+    //get chart node
+    var tmp = $($.parseHTML($('embed').attr('flashvars').split('dataXML=').splice(1,1)[0])).find('line');
+
+    //extract data
+    var start = tmp.attr('startvalue'),
+        end = tmp.attr('endvalue'),
+        mid = String(parseFloat((start + end)).toFixed(2) + '  €').replace('.', ',');
+
+    //remoe old one
+    $('.custom').remove();
+    //add data to dom
+    var row = $($('.availTable').find('tr')[0]).clone();
+    row.css('font-size', 'larger')
+        .css('color', 'chartreuse')
+        .addClass('custom');
+    row.find('.cell_0_1').text(mid);
+    row.find('.cell_0_0').text('Durchschnittspreis VK');
+    $('.availTable').prepend(row);
+})();

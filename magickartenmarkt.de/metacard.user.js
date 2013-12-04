@@ -26,11 +26,15 @@
 // ==/UserScript==
 
 //redirect to first 'appears in' link
+(function () {
 
-//metalink
-if ($('.standard_content'))
-    document.location = $($('.standard_content').find('a')[1]).attr('href');
-//search result
-if ($('.SearchTable'))
-    document.location = $($('.SearchTable').find('a')[1]).attr('href');
+    'use strict';
 
+    //metalink
+    if ($('.standard_content'))
+        document.location = $($('.standard_content').find('a')[1]).attr('href');
+    //search result
+    if ($('.SearchTable'))
+        document.location = $($('.SearchTable').find('a')[1]).attr('href');
+
+})();
