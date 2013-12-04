@@ -2,8 +2,8 @@
 // @name         add average card price (sold)
 // @description  magiccardmarket.eu, magickartenmarkt.de
 // @version      0.0.2
-// @namespace    https://github.com/solygen/userscripts-and-bookmarklets
-// @repository   https://github.com/solygen/userscripts-and-bookmarklets.git
+// @namespace    https://github.com/solygen/userscripts
+// @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 //
@@ -13,9 +13,9 @@
 // @include      https://es.magiccardmarket.eu/*.prod
 // @include      https://id.magiccardmarket.eu/*.prod
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/detail-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magickartenmarkt.de/detail-view.user.js
-// @homepage     https://github.com/solygen/userscripts-and-bookmarklets
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/magickartenmarkt.de/detail-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/magickartenmarkt.de/detail-view.user.js
+// @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==
 

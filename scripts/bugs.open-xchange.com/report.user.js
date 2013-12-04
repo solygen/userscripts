@@ -2,16 +2,16 @@
 // @name         reports with multiple tables: remove empty rows and put total tabel to top
 // @description  bugs.open-xchange.com
 // @version      0.0.1
-// @namespace    https://github.com/solygen/userscripts-and-bookmarklets
-// @repository   https://github.com/solygen/userscripts-and-bookmarklets.git
+// @namespace    https://github.com/solygen/userscripts
+// @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 //
 // @include      https://bugs.open-xchange.com/report.cgi?x_axis_field=*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/bugs.open-xchange.com/report.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/bugs.open-xchange.com/report.user.js
-// @homepage     https://github.com/solygen/userscripts-and-bookmarklets
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/bugs.open-xchange.com/report.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/bugs.open-xchange.com/report.user.js
+// @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==
 

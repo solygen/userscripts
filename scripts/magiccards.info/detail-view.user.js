@@ -2,17 +2,17 @@
 // @name         link to mkm/mcm when clicking on card image
 // @description  magiccards.info
 // @version      0.0.3
-// @namespace    https://github.com/solygen/userscripts-and-bookmarklets
-// @repository   https://github.com/solygen/userscripts-and-bookmarklets.git
+// @namespace    https://github.com/solygen/userscripts
+// @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 //
 // @include      http://magiccards.info/*.html
 // @include      http://magiccards.info/query?*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magiccards.info/detail-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts-and-bookmarklets/master/magiccards.info/detail-view.user.js
-// @homepage     https://github.com/solygen/userscripts-and-bookmarklets
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/magiccards.info/detail-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/magiccards.info/detail-view.user.js
+// @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==
 
