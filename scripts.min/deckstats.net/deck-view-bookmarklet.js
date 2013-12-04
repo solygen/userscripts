@@ -1,0 +1,13 @@
+!function(){for(var a="rgb(196, 159, 39)",b="rgb(119, 119, 119)",c="rgb(0, 0, 0)",d="rgb(132, 47, 7)",e="rgb(4, 26, 72)",f=$(".cardtable").find("tr.deck_card"),g=[],h={rare:[],uncommon:[],common:[],mythic:[],basic:[]},i=0;i<f.length;i++){var j=$(f[i]),k=$(j.find(".card_price")[0]).text().trim().replace("€",""),l=$(j.find(".card_amount")[0]).text().trim(),m=$(j.find("a")[0]).text().trim(),n=(k/l).toFixed(2),o=$(j.find(".hbtronix_icon")[0]).attr("title");//replace us price
+$(j.find(".card_price")[1]).text(n+" €"),//log proxies
+!o||1!==o.length&&"proxy"!==o||($(j.find(".hbtronix_icon")[0]).prop("src","http://i.hbtronix.de/picture_empty.png").css("height","11px").css("width","11px"),1===o.length?g.push(o+" "+m):g.push(l+" "+m));//reorder edition
+var p=$($(j.find(".info_link"))[0]).find("span").remove(),q=$($(j.find(".info_link"))[0]).text().trim().replace("(","").replace(")","").trim(),r=$($(j.find(".info_link"))[0]);p.css("color")===a&&h.rare.push(l+" "+m),p.css("color")===b&&h.uncommon.push(l+" "+m),p.css("color")===c&&h.common.push(l+" "+m),p.css("color")===d&&h.mythic.push(l+" "+m),p.css("color")===e&&h.basic.push(l+" "+m),p.text(p.text().trim()),r.text(q+" (").append(p).append(")");//replace link
+var s=$(j.find(".cardlink")).attr("href"),t=s.split("=").pop(),u="https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor="+t+"&v=card&s=cname&card="+t;$(j.find(".cardlink")).attr("href",u)}//write proxie block
+if(//remove flag and sum
+$($(".cardtable").find(".card_price.header")[1]).empty(),$($(".cardtable").find(".deck_footer").find(".card_price")[1]).empty(),g.length){g.sort(function(a,b){return a.substr(2,1).charCodeAt(0)-b.substr(2,1).charCodeAt(0)}),$(".custom").remove();var v=$($("div.ui-widget")[1]).clone();//set content
+$(v.find("p")[0]).empty().append(g.join("<br>")),//remove title and add bottom margin
+v.attr("title","").css("margin","1em .5em"),//prepend to main container
+$(".inhalt").prepend(v.addClass("custom"))}//list view sort by name
+$(".decks_list.decks_list_narrow").find(".decks_list_subtitle").remove();var w=$(".decks_list.decks_list_narrow").find("tr").remove();w.sort(function(a,b){var c=$(a).find("a").text().trim(),d=$(b).find("a").text().trim();return d>c?-1:c>d?1:0}),$(".decks_list.decks_list_narrow").find("tbody").append(w),//types
+console.log(h);//bigger card preview 
+var x=setInterval(function(){$("#kartenOverlay").css("border","0px").css("width","auto"),$("#kartenOverlayBild").css("height","400px").css("width","280px"),$("#kartenOverlayContent").css("display","none"),$("#kartenOverlay").length&&clearInterval(x)},1e3),y=$($("ul#user_menu a")[0]).attr("href");y&&$($("#header_left a")).attr("href",y)}();
