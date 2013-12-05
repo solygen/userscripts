@@ -8,7 +8,12 @@ A collection of userscripts and bookmarklets
 
 * Open [chrome://chrome/extensions/](chrome://chrome/extensions/)
 * Drag the script you want to load to the window
- 
+* Additionally you can add github to ExtensionInstallSources to get a install promt when you opening raw 
+
+```
+defaults write com.google.Chrome ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+``` 
 
 **Tampermonkey**
 

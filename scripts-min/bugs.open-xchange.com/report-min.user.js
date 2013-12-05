@@ -9,8 +9,8 @@
 //
 // @include      https://bugs.open-xchange.com/report.cgi?x_axis_field=*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/report.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/report.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/report-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/report-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
 !function(){"use strict";setTimeout(function(){for(var a=$($(".yui-dt-rec")),b=a.length-1;b>=0;b--){var c=$(a[b]),d=!!c.find("a").length;d||c.remove()}//put total to top

@@ -13,8 +13,8 @@
 // @include      https://es.magiccardmarket.eu/*.prod
 // @include      https://id.magiccardmarket.eu/*.prod
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/detail-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/detail-view.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/detail-view-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/detail-view-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
 !function(){"use strict";//get chart node

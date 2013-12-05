@@ -11,12 +11,15 @@ module.exports = function (grunt) {
 
         jshint:  require('./tasks/jshint.js'),
         uglify: require('./tasks/uglify.js'),
+        replace: require('./tasks/replace.js')
     });
 
     // Load the plugins that provide the tasks we specified in package.json.
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-text-replace');
 
-    grunt.registerTask('default', ['jshint', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'replace']);
+    grunt.registerTask('min', ['uglify', 'replace']);
 
 };
