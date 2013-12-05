@@ -40,7 +40,4 @@ scripts
 └── magickartenmarkt.de
     ├── detail-view.user.js
     └── metacard.user.js
-
-
-
 ```
