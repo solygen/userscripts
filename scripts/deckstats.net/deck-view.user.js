@@ -9,8 +9,8 @@
 //
 // @include      http://deckstats.net/decks/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/deckstats.net/deck-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/deckstats.net/deck-view.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-view.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==
@@ -28,7 +28,11 @@
         data = {
             proxies: [],
             rarity: {
-                rare: [], uncommon: [], common: [], mythic: [], basic: []
+                rare: [],
+                uncommon: [],
+                common: [],
+                mythic: [],
+                basic: []
             }
         };
 
@@ -51,17 +55,18 @@
 
         //bigger card preview
         register: function () {
-            var id = setInterval(function() {
-                $('#kartenOverlay')
-                    .css('border', '0px')
-                    .css('width', 'auto');
-                $('#kartenOverlayBild')
-                    .css('height', '380px')
-                    .css('width', '266px');
-                $('#kartenOverlayContent')
-                    .css('display', 'none');
-                if($('#kartenOverlay').length)
-                    clearInterval(id);
+            var id = setInterval(function () {
+                    $('#kartenOverlay')
+                        .css('border', '0px')
+                        .css('width', 'auto');
+                    $('#kartenOverlayBild')
+                        .css('height', '380px')
+                        .css('width', '266px');
+                    $('#kartenOverlayContent')
+                        .css('display', 'none');
+                    if ($('#kartenOverlay').length) {
+                        clearInterval(id);
+                    }
                 }, 1000);
         },
 
@@ -103,7 +108,7 @@
             //write proxie block
             if (data.proxies.length) {
                 data.proxies.sort(function (a, b) {
-                    return a.substr(2,1).charCodeAt(0) - b.substr(2,1).charCodeAt(0);
+                    return a.substr(2, 1).charCodeAt(0) - b.substr(2, 1).charCodeAt(0);
                 });
                 $('.custom').remove();
                 var node = $($('div.ui-widget')[1]).clone();
@@ -174,7 +179,7 @@
                     .css('width', '11px');
 
                 if (comment.length === 1)
-                        data.proxies.push(comment + ' ' + current.name);
+                    data.proxies.push(comment + ' ' + current.name);
                 else
                     data.proxies.push(current.num + ' ' + current.name);
             }
@@ -191,13 +196,13 @@
                 var row = $(rows[i]);
                 current = {
                     row: row,
-                    price: $(row.find('.card_price')[0]).text().trim().replace('\u20AC',''),
+                    price: $(row.find('.card_price')[0]).text().trim().replace('\u20AC', ''),
                     num: $(row.find('.card_amount')[0]).text().trim(),
                     name: $(row.find('a')[0]).text().trim(),
                     comment: $(row.find('.hbtronix_icon')[0]).attr('title'),
                     color: $($(row.find('.info_link'))[0]).find('span').css('color')
                 };
-                current.each = (current.price/current.num).toFixed(2);
+                current.each = (current.price / current.num).toFixed(2);
 
                 this.price();
                 this.identify();

@@ -21,4 +21,21 @@ A collection of userscripts and bookmarklets
 * Click on the user.js script that you want to install
 
 ## Scripts ##
-* just take a look at the 'scripts' directory of this repo
+```
+scripts
+├── bugs.open-xchange.com
+│   ├── gravatar.user.js
+│   └── report.user.js
+├── deckstats.net
+│   ├── deck-list.user.js
+│   └── deck-view.user.js
+├── magiccards.info
+│   ├── detail-view.user.js
+│   └── proxies.user.js
+└── magickartenmarkt.de
+    ├── detail-view.user.js
+    └── metacard.user.js
+
+
+
+```

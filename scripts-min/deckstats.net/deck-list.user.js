@@ -12,36 +12,9 @@
 // @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-list.user.js
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-list.user.js
 // @homepage     https://github.com/solygen/userscripts
-
 // ==/UserScript==
-
-(function () {
-
-    'use strict';
-
-    var lines = [];
-
-    //hide timestamp
-    $('.decks_list.decks_list_narrow')
-        .find('.decks_list_subtitle')
-        .remove();
-
-    //detach rows
-    lines = $('.decks_list.decks_list_narrow')
-            .find('tr')
-            .remove();
-
-    //sort
-    lines.sort(function (a, b) {
-        var valueA = $(a).find('a').text().trim(),
-            valueB = $(b).find('a').text().trim();
-        if (valueA < valueB) return -1;
-        if (valueA > valueB) return 1;
-        return 0;
-    });
-
-    //attach rows again
-    $('.decks_list.decks_list_narrow')
-        .find('tbody')
-        .append(lines);
-})();
+!function(){"use strict";var a=[];//hide timestamp
+$(".decks_list.decks_list_narrow").find(".decks_list_subtitle").remove(),//detach rows
+a=$(".decks_list.decks_list_narrow").find("tr").remove(),//sort
+a.sort(function(a,b){var c=$(a).find("a").text().trim(),d=$(b).find("a").text().trim();return d>c?-1:c>d?1:0}),//attach rows again
+$(".decks_list.decks_list_narrow").find("tbody").append(a)}();

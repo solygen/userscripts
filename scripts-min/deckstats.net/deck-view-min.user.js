@@ -9,8 +9,8 @@
 //
 // @include      http://deckstats.net/decks/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/deckstats.net/deck-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/deckstats.net/deck-view.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-view.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
 (function(){"use strict";var a="rgb(196, 159, 39)",b="rgb(119, 119, 119)",c="rgb(0, 0, 0)",d="rgb(132, 47, 7)",e="rgb(4, 26, 72)",f={},g={proxies:[],rarity:{rare:[],uncommon:[],common:[],mythic:[],basic:[]}},h={remove:function(){var a=$(".cardtable");//remove flag and sum

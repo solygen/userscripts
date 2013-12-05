@@ -9,8 +9,8 @@
 //
 // @include      https://bugs.open-xchange.com/report.cgi?x_axis_field=*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/bugs.open-xchange.com/report.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/bugs.open-xchange.com/report.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/report.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/report.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==
@@ -18,7 +18,7 @@
 (function () {
     'use strict';
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         //remove empty rows
         var $rows = $($('.yui-dt-rec'));
@@ -26,18 +26,18 @@
             var $row = $($rows[i]),
                 links = !!($row.find('a').length);
             if (!links)
-                 $row.remove();
+                $row.remove();
         }
 
         //put total to top
         var tables = $('div[align="center"]').children('table'),
-            total = $(tables.splice(tables.length-2, 1)),
+            total = $(tables.splice(tables.length - 2, 1)),
             totalclone = total.clone();
         total.remove();
         $('div[align="center"]').prepend(totalclone);
 
         var headlines = $('div[align="center"]').children('h2'),
-            headline = $(headlines.splice(headlines.length-1, 1)),
+            headline = $(headlines.splice(headlines.length - 1, 1)),
             headlineclone = headline.clone();
         headline.remove();
         $('div[align="center"]').prepend(headlineclone);

@@ -13,11 +13,5 @@
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==
-
 //redirect to calling page after added proxies
-(function () {
-
-    'use strict';
-
-    window.history.back();
-})();
+!function(){window.history.back()}();

@@ -1,5 +1,5 @@
 module.exports = {
-    files: ['src/**/*.js'],
+    files: ['scripts/**/*.js'],
     options: {
         bitwise: false,
         browser: true,

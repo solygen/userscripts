@@ -8,7 +8,9 @@ module.exports = {
                 expand: true,
                 cwd: 'scripts/',
                 src: '**/*.js',
-                dest: 'scripts.min/'
+                dest: 'scripts-min/',
+                ext: '-min.user.js'
+
             }]
        }
 };

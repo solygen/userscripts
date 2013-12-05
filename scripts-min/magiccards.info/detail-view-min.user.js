@@ -10,8 +10,8 @@
 // @include      http://magiccards.info/*.html
 // @include      http://magiccards.info/query?*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/magiccards.info/detail-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/magiccards.info/detail-view.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magiccards.info/detail-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magiccards.info/detail-view.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==

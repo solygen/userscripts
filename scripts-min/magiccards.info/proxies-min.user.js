@@ -8,10 +8,10 @@
 //
 // @include      http://magiccards.info/proxy?add*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts.min/magiccards.info/proxies.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts.min/magiccards.info/proxies.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magiccards.info/proxies.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magiccards.info/proxies.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==
 //redirect to calling page after added proxies
-!function(){window.history.back()}();
+!function(){"use strict";window.history.back()}();

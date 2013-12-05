@@ -24,17 +24,7 @@
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==
-
 //redirect to first 'appears in' link
-(function () {
-
-    'use strict';
-
-    //metalink
-    if ($('.standard_content'))
-        document.location = $($('.standard_content').find('a')[1]).attr('href');
-    //search result
-    if ($('.SearchTable'))
-        document.location = $($('.SearchTable').find('a')[1]).attr('href');
-
-})();
+!function(){"use strict";//metalink
+$(".standard_content")&&(document.location=$($(".standard_content").find("a")[1]).attr("href")),//search result
+$(".SearchTable")&&(document.location=$($(".SearchTable").find("a")[1]).attr("href"))}();
