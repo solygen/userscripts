@@ -74,14 +74,10 @@
         replace: function () {
             var list = $('a.cardlink');
             for (var i = 0; i < list.length; i++) {
-
-                debugger;
                 var link = $(list[i]),
                     href = link.attr('href'),
                     card = href.split('=').pop(),
-                    newl = 'https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=' + card + '&v=card&s=cname&card=' + card;
-                console.log(card);
-                debugger;
+                    newl = 'https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=' + card + '&v=card&s=cname&card=' + card + '&redirect=true';
                 link.attr('href', newl);
             }
 

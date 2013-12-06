@@ -17,7 +17,7 @@
 $(a.find(".card_price.header")[1]).empty(),$(a.find(".deck_footer").find(".card_price")[1]).empty()},set:function(){//set banner link to list view
 var a=$($("ul#user_menu a")[0]).attr("href");a&&$($("#header_left a")).attr("href",a)},//bigger card preview
 register:function(){var a=setInterval(function(){$("#kartenOverlay").css("border","0px").css("width","auto"),$("#kartenOverlayBild").css("height","380px").css("width","266px"),$("#kartenOverlayContent").css("display","none"),$("#kartenOverlay").length&&clearInterval(a)},1e3)},//replace link
-replace:function(){for(var a=$("a.cardlink"),b=0;b<a.length;b++){var c=$(a[b]),d=c.attr("href"),e=d.split("=").pop(),f="https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor="+e+"&v=card&s=cname&card="+e;console.log(e),c.attr("href",f)}},tab:function(){//TODO: own tab
+replace:function(){for(var a=$("a.cardlink"),b=0;b<a.length;b++){var c=$(a[b]),d=c.attr("href"),e=d.split("=").pop(),f="https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor="+e+"&v=card&s=cname&card="+e+"&redirect=true";c.attr("href",f)}},tab:function(){//TODO: own tab
 // var bar = $('.ui-tabs-nav'),
 //     tab = $(bar.children()[1]).clone(),
 //     tabcontent = $('#deck_tabs-spoiler').clone();
