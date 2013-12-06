@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         detail view: add average card price (sold)
+// @name         card view: add average card price (sold)
 // @description  magiccardmarket.eu, magickartenmarkt.de
 // @version      0.0.2
 // @namespace    https://github.com/solygen/userscripts
@@ -12,6 +12,12 @@
 // @include      https://fr.magiccardmarket.eu/*.prod
 // @include      https://es.magiccardmarket.eu/*.prod
 // @include      https://id.magiccardmarket.eu/*.prod
+//
+// @include      https://www.magickartenmarkt.de/?mainPage=register
+// @include      https://www.magiccardmarket.eu/?mainPage=register
+// @include      https://fr.magiccardmarket.eu/?mainPage=register
+// @include      https://es.magiccardmarket.eu/?mainPage=register
+// @include      https://id.magiccardmarket.eu/?mainPage=register
 //
 // @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/detail-view.user.js
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/detail-view.user.js
@@ -42,4 +48,10 @@
     row.find('.cell_0_1').text(mid);
     row.find('.cell_0_0').text(text);
     $('.availTable').prepend(row);
+
+    // in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
+    var input = $('input[name="reg_referrer"]');
+    if (input.length && input.val() === '') {
+        input.val('solygen');
+    }
 })();

@@ -55,9 +55,11 @@
         //redirect if only one card is found
         if (Object.keys(hash).length === 1)
             document.location = $($('.SearchTable').find('a')[1]).attr('href');
-    } else if ($('input[name="reg_referrer"]').length) {
-        // in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
-        var input = $('input[name="reg_referrer"]');
+    }
+
+    // in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
+    var input = $('input[name="reg_referrer"]');
+    if (input.length && input.val() === '') {
         input.val('solygen');
     }
 })();

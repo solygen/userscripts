@@ -19,6 +19,12 @@
 // @include      https://es.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
 // @include      https://id.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
 //
+// @include      https://www.magickartenmarkt.de/?mainPage=register
+// @include      https://www.magiccardmarket.eu/?mainPage=register
+// @include      https://fr.magiccardmarket.eu/?mainPage=register
+// @include      https://es.magiccardmarket.eu/?mainPage=register
+// @include      https://id.magiccardmarket.eu/?mainPage=register
+//
 // @updateURL    https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/metacard-min.user.js
 // @downloadURL  https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/metacard-min.user.js
 // @homepage     https://github.com/solygen/userscripts
@@ -26,6 +32,7 @@
 // ==/UserScript==
 //redirect to first 'appears in' link (only used when link is called from a ressource that adds '&redirect=true' to url)
 !function(){"use strict";if($(".standard_content").length)//metalink
-document.location=$($(".standard_content").find("a")[1]).attr("href");else if($(".SearchTable")){//search result
+document.location=$($(".standard_content").find("a")[1]).attr("href");else if($(".SearchTable").length){//search result
 var a,b=$(".SearchTable tbody tr"),c={};for(a=b.length-1;a>=0;a--){var d=$(b[a]),e=$(d.children().find("a")[0]).text();c[e]=!0}//redirect if only one card is found
-1===Object.keys(c).length&&(document.location=$($(".SearchTable").find("a")[1]).attr("href"))}}();
+1===Object.keys(c).length&&(document.location=$($(".SearchTable").find("a")[1]).attr("href"))}// in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
+var f=$('input[name="reg_referrer"]');f.length&&""===f.val()&&f.val("solygen")}();

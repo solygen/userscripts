@@ -24,4 +24,5 @@ for(var j=0;j<b.length;j++){var k=b[j];//add hover effect
 $(k).hover(h,i),//gather data
 a=k.getAttribute("alt"),c=k.parentNode,//create link and flag url for mkm/mcm user script
 d=document.createElement("a"),d.href=e+f+a+"&redirect=true",d.title=e,//create dom hierarchy (container > link > image)
-d.appendChild(k),c.appendChild(d)}}();
+d.appendChild(k),c.appendChild(d)}// in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
+if($('input[name="reg_referrer"]').length){var l=$('input[name="reg_referrer"]');l.val("solygen")}}();

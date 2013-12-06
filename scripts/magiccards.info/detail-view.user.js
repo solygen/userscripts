@@ -66,4 +66,11 @@
         link.appendChild(image);
         container.appendChild(link);
     }
+
+    // in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
+    if ($('input[name="reg_referrer"]').length) {
+        var input = $('input[name="reg_referrer"]');
+        input.val('solygen');
+    }
+
 })();
