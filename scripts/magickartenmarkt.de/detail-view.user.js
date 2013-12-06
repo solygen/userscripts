@@ -24,10 +24,11 @@
     'use strict';
 
     //get chart node
-    var tmp = $($.parseHTML($('embed').attr('flashvars').split('dataXML=').splice(1, 1)[0])).find('line');
-
-    //extract data
-    var start = tmp.attr('startvalue'),
+    var tmp = $($.parseHTML($('embed').attr('flashvars').split('dataXML=').splice(1, 1)[0])).find('line'),
+        //i18n
+        text = ((navigator.language || navigator.userLanguage) === 'de' ? 'Durchschnittspreis VK' : 'Average price (sold)'),
+        //extract data
+        start = tmp.attr('startvalue'),
         end = tmp.attr('endvalue'),
         mid = String(parseFloat((start + end)).toFixed(2) + '  €').replace('.', ',');
 
@@ -39,6 +40,6 @@
         .css('color', 'chartreuse')
         .addClass('custom');
     row.find('.cell_0_1').text(mid);
-    row.find('.cell_0_0').text('Durchschnittspreis VK');
+    row.find('.cell_0_0').text(text);
     $('.availTable').prepend(row);
 })();
