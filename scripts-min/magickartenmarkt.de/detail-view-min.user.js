@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         add average card price (sold)
+// @name         detail view: add average card price (sold)
 // @description  magiccardmarket.eu, magickartenmarkt.de
 // @version      0.0.2
 // @namespace    https://github.com/solygen/userscripts

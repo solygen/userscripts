@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         link to mkm/mcm when clicking on card image
+// @name         deck view: link to mkm/mcm when clicking on card image
 // @description  magiccards.info
 // @version      0.0.3
 // @namespace    https://github.com/solygen/userscripts

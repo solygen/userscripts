@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         sort your deck list by name and hide timestamp
+// @name         deck list: sort your deck list by name and hide timestamp
 // @description  deckstats.net
 // @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         redirect to card view after adding proxy
+// @name         proxies: redirect to card view after adding proxy
 // @description  magiccards.info
 // @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         skip meta card page
+// @name         redirect: skip meta card page / skip search result page
 // @description  magiccardmarket.eu and magickartenmarkt.de
 // @version      0.0.4
 // @namespace    https://github.com/solygen/userscripts
@@ -13,11 +13,11 @@
 // @include      https://es.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 // @include      https://id.magiccardmarket.eu/?mainPage=showMetacard&idMetacard=*
 //
-// @include      https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=*&redirect=true
-// @include      https://www.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*&redirect=true
-// @include      https://fr.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*&redirect=true
-// @include      https://es.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*&redirect=true
-// @include      https://id.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*&redirect=true
+// @include      https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=*
+// @include      https://www.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
+// @include      https://fr.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
+// @include      https://es.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
+// @include      https://id.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
 //
 // @updateURL    https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/metacard.user.js
 // @downloadURL  https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/metacard.user.js
@@ -33,8 +33,22 @@
     if ($('.standard_content').length)
         //metalink
         document.location = $($('.standard_content').find('a')[1]).attr('href');
-    else if ($('.SearchTable'))
+    else if ($('.SearchTable')) {
+
         //search result
-        document.location = $($('.SearchTable').find('a')[1]).attr('href');
+        var list = $('.SearchTable tbody tr'),
+            hash = {},
+            i;
+
+        for (i = list.length - 1; i >= 0; i--) {
+            var tr = $(list[i]),
+                card = $(tr.children().find('a')[0]).text();
+            hash[card] = true;
+        }
+
+        //redirect if only one card is found
+        if (Object.keys(hash).length === 1)
+            document.location = $($('.SearchTable').find('a')[1]).attr('href');
+    }
 
 })();

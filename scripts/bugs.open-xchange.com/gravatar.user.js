@@ -2,7 +2,7 @@
 // @name         Add Gravatar Everywhere
 // @namespace    http://docwhat.gerf.org/
 // @description  Adds gravatars to all a@href="mailto:" links
-// @require      https://rawgithub.com/solygen/userscripts/masterlib/md5.js
+// @require      https://rawgithub.com/solygen/userscripts/master/lib/md5.js
 // @include      https://bugs.open-xchange.com/show_bug.cgi*
 // ==/UserScript==
 
@@ -33,9 +33,9 @@
         var email = el.href.replace(/^mailto:/, '').replace(/\?.*$/, '').toLowerCase(),
             grav_url = ['http://www.gravatar.com/avatar.php?gravatar_id=',
                         md5cached(email),
-                        '&d=identicon',
+                        //'&d=identicon',
                         //'&d=wavatar',
-                        //'&d=monsterid',
+                        '&d=monsterid',
                         '&s=',
                         24].join('');
 

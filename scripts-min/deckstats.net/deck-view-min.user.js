@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         different tweaks
+// @name         deck view: different tweaks
 // @description  deckstats.net
 // @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
