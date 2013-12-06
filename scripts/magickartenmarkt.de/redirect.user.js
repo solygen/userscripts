@@ -19,6 +19,12 @@
 // @include      https://es.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
 // @include      https://id.magiccardmarket.eu/?mainPage=showSearchResult&searchFor=*
 //
+// @include      https://www.magickartenmarkt.de/?mainPage=register
+// @include      https://www.magiccardmarket.eu/?mainPage=register
+// @include      https://fr.magiccardmarket.eu/?mainPage=register
+// @include      https://es.magiccardmarket.eu/?mainPage=register
+// @include      https://id.magiccardmarket.eu/?mainPage=register
+//
 // @updateURL    https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/metacard.user.js
 // @downloadURL  https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/metacard.user.js
 // @homepage     https://github.com/solygen/userscripts
@@ -33,7 +39,7 @@
     if ($('.standard_content').length)
         //metalink
         document.location = $($('.standard_content').find('a')[1]).attr('href');
-    else if ($('.SearchTable')) {
+    else if ($('.SearchTable').length) {
 
         //search result
         var list = $('.SearchTable tbody tr'),
@@ -49,6 +55,9 @@
         //redirect if only one card is found
         if (Object.keys(hash).length === 1)
             document.location = $($('.SearchTable').find('a')[1]).attr('href');
+    } else if ($('input[name="reg_referrer"]').length) {
+        // in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
+        var input = $('input[name="reg_referrer"]');
+        input.val('solygen');
     }
-
 })();
