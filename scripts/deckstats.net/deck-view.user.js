@@ -70,6 +70,23 @@
                 }, 1000);
         },
 
+        //replace link
+        replace: function () {
+            var list = $('a.cardlink');
+            for (var i = 0; i < list.length; i++) {
+
+                debugger;
+                var link = $(list[i]),
+                    href = link.attr('href'),
+                    card = href.split('=').pop(),
+                    newl = 'https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=' + card + '&v=card&s=cname&card=' + card;
+                console.log(card);
+                debugger;
+                link.attr('href', newl);
+            }
+
+        },
+
         tab: function () {
             //TODO: own tab
             // var bar = $('.ui-tabs-nav'),
@@ -127,6 +144,7 @@
             this.remove();
             this.set();
             this.register();
+            this.replace();
             this.tab();
         }
     };
@@ -158,15 +176,6 @@
                 .append(')');
             //update rarity statistics
             this.rarity(span.css('color'), current.num, current.name);
-        },
-
-        //replace link
-        replace: function () {
-            var link = $(current.row.find('.cardlink')),
-                href = link.attr('href'),
-                card = href.split('=').pop(),
-                newl = 'https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=' + card + '&v=card&s=cname&card=' + card;
-            link.attr('href', newl);
         },
 
         //identify proxies
@@ -207,7 +216,6 @@
                 this.price();
                 this.identify();
                 this.reorder();
-                this.replace();
             }
         }
     };
