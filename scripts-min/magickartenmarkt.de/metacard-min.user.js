@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skip meta card page
 // @description  magiccardmarket.eu and magickartenmarkt.de
-// @version      0.0.3
+// @version      0.0.4
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -24,7 +24,7 @@
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==
-//redirect to first 'appears in' link
-!function(){"use strict";//metalink
-$(".standard_content")&&(document.location=$($(".standard_content").find("a")[1]).attr("href")),//search result
-$(".SearchTable")&&(document.location=$($(".SearchTable").find("a")[1]).attr("href"))}();
+//redirect to first 'appears in' link (only used when link is called from a ressource that adds '&redirect=true' to url)
+!function(){"use strict";$(".standard_content").length?//metalink
+document.location=$($(".standard_content").find("a")[1]).attr("href"):$(".SearchTable")&&(//search result
+document.location=$($(".SearchTable").find("a")[1]).attr("href"))}();
