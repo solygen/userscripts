@@ -1,10 +1,21 @@
 // ==UserScript==
-// @name         Add Gravatar Everywhere
-// @namespace    http://docwhat.gerf.org/
-// @description  Adds gravatars to all a@href="mailto:" links
-// @require      https://rawgithub.com/solygen/userscripts/master/lib/md5.js
+// @name         Bugzilla Gravatar
+// @description  bugzilla
+// @version      0.0.1
+// @namespace    https://github.com/solygen/userscripts
+// @repository   https://github.com/solygen/userscripts.git
+// @license      MIT
+//
 // @include      https://bugs.open-xchange.com/show_bug.cgi*
+// @require      https://rawgithub.com/solygen/userscripts/master/lib/md5.js
+//
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/gravatar.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/gravatar.user.js
+// @homepage     https://github.com/solygen/userscripts
+//
 // ==/UserScript==
+
+//based on userscripts.org/scripts/show/29070
 
 (function () {
 
