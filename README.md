@@ -29,11 +29,13 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 ```
 scripts
 ├── [ 170]  bugs.open-xchange.com
-│   ├── [2.1K]  gravatar.user.js
+│   ├── [2.5K]  gravatar.user.js
 │   └── [1.6K]  report.user.js
 ├── [ 170]  deckstats.net
 │   ├── [1.3K]  deck-list.user.js
 │   └── [7.8K]  deck-view.user.js
+├── [ 136]  fastfoodpreise.de
+│   └── [1.2K]  toJson.js
 ├── [ 170]  magiccards.info
 │   ├── [2.7K]  detail-view.user.js
 │   └── [ 749]  proxies.user.js
