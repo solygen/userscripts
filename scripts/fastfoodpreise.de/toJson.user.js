@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         fastfoodpreise: write prices to console as json
-// @description  deckstats.net
+// @description  fastfoodpreise.de
 // @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -19,12 +19,16 @@
     'use strict';
 
     var list = document.querySelectorAll('tr'),
-        data = {};
+        data = {}, last;
 
     [].forEach.call(list, function (row) {
-        if (row.querySelector('a') && row.querySelector('.size') && row.querySelector('.price')) {
-            data[row.querySelector('a').innerHTML.split('<')[0].replace('&nbsp;', '').trim()] = {
-                size: row.querySelector('.size').innerHTML,
+        if (row.querySelector('.size') && row.querySelector('.price')) {
+            last = row.querySelector('a') ? row.querySelector('a').innerHTML.split('<')[0].replace('&nbsp;', '').trim() : last,
+            size = row.querySelector('.size').innerHTML,
+            key = size !== '' ? last + ' ' + row.querySelector('.size').innerHTML : last;
+            data[key] = {
+                name: last,
+                size: size,
                 price: row.querySelector('.price').innerHTML
             };
         }
