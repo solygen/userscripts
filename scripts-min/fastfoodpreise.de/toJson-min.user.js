@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         fastfoodpreise: write prices to console as json
-// @description  deckstats.net
+// @description  fastfoodpreise.de
 // @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -12,4 +12,4 @@
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/toJson-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
-!function(){"use strict";var a=document.querySelectorAll("tr"),b={};[].forEach.call(a,function(a){a.querySelector("a")&&a.querySelector(".size")&&a.querySelector(".price")&&(b[a.querySelector("a").innerHTML.split("<")[0].replace("&nbsp;","").trim()]={size:a.querySelector(".size").innerHTML,price:a.querySelector(".price").innerHTML})}),console.log(JSON.stringify(b,void 0,4))}();
+!function(){"use strict";var a,b=document.querySelectorAll("tr"),c={};[].forEach.call(b,function(b){b.querySelector(".size")&&b.querySelector(".price")&&(a=b.querySelector("a")?b.querySelector("a").innerHTML.split("<")[0].replace("&nbsp;","").trim():a,size=b.querySelector(".size").innerHTML,key=""!==size?a+" "+b.querySelector(".size").innerHTML:a,c[key]={name:a,size:size,price:b.querySelector(".price").innerHTML})}),console.log(JSON.stringify(c,void 0,4))}();

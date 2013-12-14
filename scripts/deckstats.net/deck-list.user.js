@@ -31,6 +31,22 @@
             .find('tr')
             .remove();
 
+//TODO: extract tags for list view
+//      $.each(lines, function (i) {
+//         var line = lines[i];
+//         console.log(line);
+//         debugger;
+//         var link = $(line).find('a').attr('href');
+//         var deck = $('<iframe src="' + link + '" frameborder="0" scrolling="no" id="myFrame"></iframe>').appendTo($(document.body));
+        
+//         deck.load(
+//                 function() {
+//                     debugger;
+//                     var tags = $(deck.contents()).find('.deck_tag').text();
+//                     $(line).append($('<td>').text(tags)); 
+//                 })
+//     })
+
     //sort
     lines.sort(function (a, b) {
         var valueA = $(a).find('a').text().trim(),

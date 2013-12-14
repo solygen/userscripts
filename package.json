@@ -1,16 +1,19 @@
 {
-    "name": "userscripts",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/solygen/userscripts.git"
-    },
-    "version": "0.1.0",
-    "devDependencies": {
-        "grunt": "~0.4",
-        "grunt-contrib-jshint": "~0.5",
-        "grunt-contrib-uglify": "~0.2",
-        "grunt-text-replace": "~0.3",
-        "grunt-contrib-clean": "~0.4",
-        "grunt-shell": "~0.6"
-    }
+  "name": "userscripts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solygen/userscripts.git"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-jshint": "~0.7",
+    "grunt-contrib-uglify": "~0.2",
+    "grunt-text-replace": "~0.3",
+    "grunt-contrib-clean": "~0.5",
+    "grunt-shell": "~0.6"
+  },
+  "dependencies": {
+    "time-grunt": "~0.2.3"
+  }
 }

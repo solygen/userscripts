@@ -15,6 +15,20 @@
 // ==/UserScript==
 !function(){"use strict";var a=[];//hide timestamp
 $(".decks_list.decks_list_narrow").find(".decks_list_subtitle").remove(),//detach rows
-a=$(".decks_list.decks_list_narrow").find("tr").remove(),//sort
+a=$(".decks_list.decks_list_narrow").find("tr").remove(),//TODO: extract tags for list view
+//      $.each(lines, function (i) {
+//         var line = lines[i];
+//         console.log(line);
+//         debugger;
+//         var link = $(line).find('a').attr('href');
+//         var deck = $('<iframe src="' + link + '" frameborder="0" scrolling="no" id="myFrame"></iframe>').appendTo($(document.body));
+//         deck.load(
+//                 function() {
+//                     debugger;
+//                     var tags = $(deck.contents()).find('.deck_tag').text();
+//                     $(line).append($('<td>').text(tags)); 
+//                 })
+//     })
+//sort
 a.sort(function(a,b){var c=$(a).find("a").text().trim(),d=$(b).find("a").text().trim();return d>c?-1:c>d?1:0}),//attach rows again
 $(".decks_list.decks_list_narrow").find("tbody").append(a)}();

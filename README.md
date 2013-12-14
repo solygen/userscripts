@@ -28,20 +28,23 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 ## Scripts ##
 ```
 scripts
-├── [ 170]  bugs.open-xchange.com
-│   ├── [2.5K]  gravatar.user.js
-│   └── [1.6K]  report.user.js
 ├── [ 170]  deckstats.net
-│   ├── [1.3K]  deck-list.user.js
+│   ├── [1.9K]  deck-list.user.js
 │   └── [7.8K]  deck-view.user.js
 ├── [ 136]  fastfoodpreise.de
-│   └── [1.2K]  toJson.js
+│   └── [1.4K]  toJson.user.js
 ├── [ 170]  magiccards.info
 │   ├── [2.7K]  detail-view.user.js
 │   └── [ 749]  proxies.user.js
-└── [ 170]  magickartenmarkt.de
-    ├── [2.3K]  card-view.user.js
-    └── [2.9K]  redirect.user.js
+├── [ 170]  magickartenmarkt.de
+│   ├── [2.3K]  card-view.user.js
+│   └── [2.9K]  redirect.user.js
+├── [ 102]  mcdonalds.de
+│   └── [9.9K]  prices.user.js
+└── [ 204]  open-xchange.com
+    ├── [2.2K]  appsuite.user.js
+    ├── [2.5K]  gravatar.user.js
+    └── [1.6K]  report.user.js
 
 
 ```

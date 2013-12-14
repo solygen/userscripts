@@ -25,7 +25,7 @@
         if (row.querySelector('.size') && row.querySelector('.price')) {
             last = row.querySelector('a') ? row.querySelector('a').innerHTML.split('<')[0].replace('&nbsp;', '').trim() : last,
             size = row.querySelector('.size').innerHTML,
-            key = size !== '' ? last + ' ' + row.querySelector('.size').innerHTML : last;
+            key = size !== '' ? (last + ' ' + row.querySelector('.size').innerHTML) : last;
             data[key] = {
                 name: last,
                 size: size,

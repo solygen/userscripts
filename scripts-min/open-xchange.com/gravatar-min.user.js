@@ -9,8 +9,8 @@
 // @include      https://bugs.open-xchange.com/show_bug.cgi*
 // @require      https://rawgithub.com/solygen/userscripts/master/lib/md5.js
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/gravatar-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/bugs.open-xchange.com/gravatar-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/gravatar-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/gravatar-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==
