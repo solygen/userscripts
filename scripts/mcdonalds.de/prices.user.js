@@ -121,17 +121,17 @@
                 "size": "groß",
                 "price": "€ 2,29"
             },
-            "Chicken Mc Nuggets 4 Stück": {
+            "4 Chicken McNuggets": {
                 "name": "Chicken Mc Nuggets",
                 "size": "4 Stück",
                 "price": "€ 2,19"
             },
-            "Chicken Mc Nuggets 6 Stück": {
+            "6 Chicken McNuggets": {
                 "name": "Chicken Mc Nuggets",
                 "size": "6 Stück",
                 "price": "€ 3,39"
             },
-            "Chicken Mc Nuggets 9 Stück": {
+            "9 Chicken McNuggets": {
                 "name": "Chicken Mc Nuggets",
                 "size": "9 Stück",
                 "price": "€ 3,99"
@@ -309,14 +309,18 @@
         } 
     };
 
-    var data = prices.data;
-
-    var list = $('li.isotope-item');
+    var data = prices.data,
+        list = $('li.isotope-item');
 
     [].forEach.call(list, function (item) {
         var $item = $(item),
             link = $item.find('span.title'),
-            title = link.text().replace('®', '').trim();
+            node = link.clone(),
+            title;
+        //ignore 'new' tags
+        node.find('em').remove();
+        title = node.text().replace('®', '').trim();
+        //update text
         if (data[title]) {
             link.text(title + ' (' + data[title].price + ')');
         }
