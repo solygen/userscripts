@@ -25,6 +25,9 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 * Browse to the scripts folder inside Firefox (either local or from github)
 * Click on the user.js script that you want to install
 
+## Documentation
++ [deckstats.net](https://github.com/solygen/userscripts/blob/master/doc/deckstats.net.md)
+
 ## Scripts ##
 ```
 scripts
@@ -48,6 +51,8 @@ scripts
 
 
 ```
+
+
 
 **Please note**<br>
 In case you would enter the registration form of magickartenmarkt/magiccardsmarket my username will be automatically prefilled in the referrer field in case it's empty. This will give me a 1% bonus for all your purchases and has absolutly no disadvantages for you... just in case you want to say 'thank you' for sharing these userscripts with you ;-)
