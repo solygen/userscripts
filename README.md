@@ -27,6 +27,7 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 
 ## Documentation
 + [deckstats.net](https://github.com/solygen/userscripts/blob/master/doc/deckstats.net.md)
++ [magiccards.info](https://github.com/solygen/userscripts/blob/master/doc/magiccards.info.md)
 
 ## Scripts ##
 ```
@@ -49,9 +50,7 @@ scripts
     ├── [2.5K]  gravatar.user.js
     └── [1.6K]  report.user.js
 
-
 ```
-
 
 
 **Please note**<br>
