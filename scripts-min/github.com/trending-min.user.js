@@ -11,19 +11,5 @@
 // @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/github.com/trending-min.user.js
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/github.com/trending-min.user.js
 // @homepage     https://github.com/solygen/userscripts
-
 // ==/UserScript==
-
-(function () {
-
-    'use strict';
-
-    var list = $('.repo-leaderboard-list-item'),
-        repo;
-
-    list.each(function (index, item) {
-        repo = $(item);
-        if (repo.find('.starring-container.on').length)
-            repo.remove();
-        });
-})();
+!function(){"use strict";var a,b=$(".repo-leaderboard-list-item");b.each(function(b,c){a=$(c),a.find(".starring-container.on").length&&a.remove()})}();

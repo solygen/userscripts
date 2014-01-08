@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         deck view: link to mkm/mcm when clicking on card image
 // @description  magiccards.info
-// @version      0.0.3
+// @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -10,8 +10,8 @@
 // @include      http://magiccards.info/*.html
 // @include      http://magiccards.info/query?*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magiccards.info/detail-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magiccards.info/detail-view.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magiccards.info/detail-view-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magiccards.info/detail-view-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==

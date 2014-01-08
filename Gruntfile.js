@@ -38,7 +38,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-remove-logging');
 
     // define tasks
-    grunt.registerTask('default', ['jshint', 'clean', 'uglify', 'replace', 'shell:tree']);
-    grunt.registerTask('min', ['clean', 'uglify', 'replace', 'shell:tree']);
+    grunt.registerTask('default', ['jshint', 'clean', 'uglify', 'shell:tree']);
+    grunt.registerTask('min', ['clean', 'uglify', 'shell:tree']);
 
 };

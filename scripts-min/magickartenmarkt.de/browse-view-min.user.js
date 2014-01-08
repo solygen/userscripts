@@ -16,28 +16,5 @@
 // @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/browse-view-min.user.js
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/browse-view-min.user.js
 // @homepage     https://github.com/solygen/userscripts
-
 // ==/UserScript==
-
-(function () {
-
-    'use strict';
-	
-	var list = $($.find('.col_2')).find('a'),
-		node = $($('#siteContents').children()[2]),
-		counter = 0,
-		name;
-	
-	$.each(list, function (index, elem) {
-		var $elem = $(elem),
-			current = $elem.text(),
-			remove = name === current;
-		name = current;
-		if (remove)
-			$elem.text('');
-		else 
-			counter++;
-	});
-
-    node.text(counter + ' hits');
-})();
+!function(){"use strict";var a,b=$($.find(".col_2")).find("a"),c=$($("#siteContents").children()[2]),d=0;$.each(b,function(b,c){var e=$(c),f=e.text(),g=a===f;a=f,g?e.text(""):d++}),c.text(d+" hits")}();

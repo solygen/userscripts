@@ -31,24 +31,29 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 
 ## Scripts ##
 ```
-scripts
-├── [ 170]  deckstats.net
-│   ├── [1.9K]  deck-list.user.js
-│   └── [7.8K]  deck-view.user.js
-├── [ 136]  fastfoodpreise.de
-│   └── [1.4K]  toJson.user.js
-├── [ 170]  magiccards.info
-│   ├── [2.7K]  detail-view.user.js
-│   └── [ 749]  proxies.user.js
+scripts-min
+├── [ 136]  deckstats.net
+│   ├── [1.7K]  deck-list-min.user.js
+│   └── [4.6K]  deck-view-min.user.js
+├── [ 102]  fastfoodpreise.de
+│   └── [1.1K]  toJson-min.user.js
+├── [ 102]  github.com
+│   └── [ 756]  trending-min.user.js
+├── [ 136]  magiccards.info
+│   ├── [2.0K]  detail-view-min.user.js
+│   └── [ 738]  proxies-min.user.js
 ├── [ 170]  magickartenmarkt.de
-│   ├── [2.3K]  card-view.user.js
-│   └── [2.9K]  redirect.user.js
+│   ├── [1.2K]  browse-view-min.user.js
+│   ├── [2.1K]  card-view-min.user.js
+│   └── [2.6K]  redirect-min.user.js
 ├── [ 102]  mcdonalds.de
-│   └── [9.9K]  prices.user.js
-└── [ 204]  open-xchange.com
-    ├── [2.2K]  appsuite.user.js
-    ├── [2.5K]  gravatar.user.js
-    └── [1.6K]  report.user.js
+│   └── [4.8K]  prices-min.user.js
+├── [ 170]  open-xchange.com
+│   ├── [1.6K]  appsuite-min.user.js
+│   ├── [1.6K]  gravatar-min.user.js
+│   └── [1.2K]  report-min.user.js
+└── [ 102]  slimkicker.com
+    └── [ 982]  hide-min.user.js
 
 ```
 

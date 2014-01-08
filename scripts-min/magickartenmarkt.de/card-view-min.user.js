@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         card view: add average card price (sold)
 // @description  magiccardmarket.eu, magickartenmarkt.de
-// @version      0.0.2
+// @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -19,8 +19,8 @@
 // @include      https://es.magiccardmarket.eu/?mainPage=register
 // @include      https://id.magiccardmarket.eu/?mainPage=register
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/detail-view-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/detail-view-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/card-view-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/card-view-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
 !function(){"use strict";//get chart node

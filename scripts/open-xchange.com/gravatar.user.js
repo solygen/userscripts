@@ -9,8 +9,8 @@
 // @include      https://bugs.open-xchange.com/show_bug.cgi*
 // @require      https://rawgithub.com/solygen/userscripts/master/lib/md5.js
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/gravatar.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/gravatar.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/gravatar-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/gravatar-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==
@@ -28,10 +28,14 @@
         if (isBookmarklet)
             hash = md5(str);
         else {
+            /* jshint ignore:start */
             hash = GM_getValue(str);
+            /* jshint ignore:end */
             if (!hash) {
                 hash = md5(str);
+                /* jshint ignore:start */
                 GM_setValue(str, hash);
+                /* jshint ignore:end */
             }
         }
         return hash;
@@ -62,6 +66,7 @@
             i;
             for (i = 0; i < len; i++) {
                 el = list[i];
+                /* jshint -W083 */
                 if (re.test(el.href)) {
                     (function () {
                         var local_el = el;
@@ -70,6 +75,7 @@
                             }, 10);
                     })();
                 }
+                /* jshint +W083 */
             }
         } catch (e) {
             alert('debug: ' + e);

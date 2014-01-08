@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         redirect: skip meta card page / skip search result page
 // @description  magiccardmarket.eu and magickartenmarkt.de
-// @version      0.0.4
+// @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -25,8 +25,8 @@
 // @include      https://es.magiccardmarket.eu/?mainPage=register
 // @include      https://id.magiccardmarket.eu/?mainPage=register
 //
-// @updateURL    https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/metacard.user.js
-// @downloadURL  https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/metacard.user.js
+// @updateURL    https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/redirect-min.user.js
+// @downloadURL  https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/redirect-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==

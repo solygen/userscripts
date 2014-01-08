@@ -8,8 +8,8 @@
 //
 // @include      http://www.fastfoodpreise.de/preisliste/*.html
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/toJson.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/toJson.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/toJson-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/toJson-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==
@@ -23,8 +23,8 @@
 
     [].forEach.call(list, function (row) {
         if (row.querySelector('.size') && row.querySelector('.price')) {
-            last = row.querySelector('a') ? row.querySelector('a').innerHTML.split('<')[0].replace('&nbsp;', '').trim() : last,
-            size = row.querySelector('.size').innerHTML,
+            last = row.querySelector('a') ? row.querySelector('a').innerHTML.split('<')[0].replace('&nbsp;', '').trim() : last;
+            size = row.querySelector('.size').innerHTML;
             key = size !== '' ? (last + ' ' + row.querySelector('.size').innerHTML) : last;
             data[key] = {
                 name: last,

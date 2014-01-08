@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         deck view: link to mkm/mcm when clicking on card image
 // @description  magiccards.info
-// @version      0.0.3
+// @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -23,6 +23,6 @@ b=g();//process each card image
 for(var j=0;j<b.length;j++){var k=b[j];//add hover effect
 $(k).hover(h,i),//gather data
 a=k.getAttribute("alt"),c=k.parentNode,//create link and flag url for mkm/mcm user script
-d=document.createElement("a"),d.href=e+f+a+"&redirect=true",d.title=e,//create dom hierarchy (container > link > image)
+d=document.createElement("a"),d.href=e+f+a+"&redirect=true&referrer=solygen",d.title=e,//create dom hierarchy (container > link > image)
 d.appendChild(k),c.appendChild(d)}// in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
 if($('input[name="reg_referrer"]').length){var l=$('input[name="reg_referrer"]');l.val("solygen")}}();

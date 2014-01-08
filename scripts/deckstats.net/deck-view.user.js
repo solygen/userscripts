@@ -9,8 +9,8 @@
 //
 // @include      http://deckstats.net/decks/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-view.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-view.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-view-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-view-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

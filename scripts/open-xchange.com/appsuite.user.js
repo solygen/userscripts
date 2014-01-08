@@ -11,8 +11,8 @@
 // @include      http://docs-dev-cont-nightly.oxhh.int/appsuite*
 // @include      https://ui-dev.open-xchange.com*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/appsuite.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/appsuite.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/appsuite-min.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/appsuite-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
 
@@ -56,9 +56,11 @@
         da.setSeconds(ox.version.substr(-2, 2));
         
         //append to DOM
+        /* jshint -W107 */
         node.find('a').text(ago(da))
                     .attr('href', 'javascript: ox.cache.clear().done(function() { console.log("cache clear"); })')
                     .css('color', 'rgb(255, 122, 0)');
+        /* jshint +W107 */
         $('.launchers').prepend(node);
         clearInterval(id);
     }, 500);
