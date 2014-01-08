@@ -77,7 +77,7 @@
                 var link = $(list[i]),
                     href = link.attr('href'),
                     card = href.split('=').pop(),
-                    newl = 'https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=' + card + '&v=card&s=cname&card=' + card + '&redirect=true';
+                    newl = 'https://www.magickartenmarkt.de/?mainPage=showSearchResult&searchFor=' + card + '&v=card&s=cname&card=' + card + '&redirect=true&referrer=solygen';
                 link.attr('href', newl);
             }
 

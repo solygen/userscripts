@@ -59,7 +59,7 @@
 
         //create link and flag url for mkm/mcm user script
         link = document.createElement('a');
-        link.href = url + query + cardname + '&redirect=true';
+        link.href = url + query + cardname + '&redirect=true&referrer=solygen';
         link.title = url;
 
         //create dom hierarchy (container > link > image)
