@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         card view: add average card price (sold)
 // @description  magiccardmarket.eu, magickartenmarkt.de
-// @version      0.0.1
+// @version      0.0.2
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -36,7 +36,11 @@
         //extract data
         start = tmp.attr('startvalue'),
         end = tmp.attr('endvalue'),
-        mid = String(parseFloat((start + end)).toFixed(2) + '  €').replace('.', ',');
+        mid = String(parseFloat((start + end)).toFixed(2) + '  €').replace('.', ','),
+        card = document.title.split('(')[0].trim();
+
+    //add current price to local storage
+    localStorage.setItem(card, parseFloat((start + end)).toFixed(2));
 
     //remoe old one
     $('.custom').remove();

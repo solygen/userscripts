@@ -29,6 +29,17 @@
                 $row.remove();
         }
 
+        //bigger font size and map email address to name
+        var cells = [].slice.call(document.querySelectorAll('.yui-dt-liner'));
+        cells.forEach(function logArrayElements(element, index, array) {
+            element.setAttribute('style', 'font-size: 13pt');
+            if (element.textContent.indexOf('@open-xchange.com') !== -1) {
+                element.textContent = element.textContent.replace('@open-xchange.com', '');
+                element.textContent = element.textContent.replace('.', ' ');
+                element.textContent = element.textContent.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+            }
+        });
+
         //put total to top
         var tables = $('div[align="center"]').children('table'),
             total = $(tables.splice(tables.length - 2, 1)),

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         card view: add average card price (sold)
 // @description  magiccardmarket.eu, magickartenmarkt.de
-// @version      0.0.1
+// @version      0.0.2
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -26,7 +26,8 @@
 !function(){"use strict";//get chart node
 var a=$($.parseHTML($("embed").attr("flashvars").split("dataXML=").splice(1,1)[0])).find("line"),//i18n
 b="de"===(navigator.language||navigator.userLanguage)?"Durchschnittspreis VK":"Average price (sold)",//extract data
-c=a.attr("startvalue"),d=a.attr("endvalue"),e=String(parseFloat(c+d).toFixed(2)+"  €").replace(".",",");//remoe old one
+c=a.attr("startvalue"),d=a.attr("endvalue"),e=String(parseFloat(c+d).toFixed(2)+"  €").replace(".",","),f=document.title.split("(")[0].trim();//add current price to local storage
+localStorage.setItem(f,parseFloat(c+d).toFixed(2)),//remoe old one
 $(".custom").remove();//add data to dom
-var f=$($(".availTable").find("tr")[0]).clone();f.css("font-size","larger").css("color","chartreuse").addClass("custom"),f.find(".cell_0_1").text(e),f.find(".cell_0_0").text(b),$(".availTable").prepend(f);// in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
-var g=$('input[name="reg_referrer"]');g.length&&""===g.val()&&g.val("solygen")}();
+var g=$($(".availTable").find("tr")[0]).clone();g.css("font-size","larger").css("color","chartreuse").addClass("custom"),g.find(".cell_0_1").text(e),g.find(".cell_0_0").text(b),$(".availTable").prepend(g);// in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
+var h=$('input[name="reg_referrer"]');h.length&&""===h.val()&&h.val("solygen")}();

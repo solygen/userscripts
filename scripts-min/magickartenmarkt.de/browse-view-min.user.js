@@ -17,4 +17,15 @@
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/browse-view-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
-!function(){"use strict";var a,b=$($.find(".col_2")).find("a"),c=$($("#siteContents").children()[2]),d=0;$.each(b,function(b,c){var e=$(c),f=e.text(),g=a===f;a=f,g?e.text(""):d++}),c.text(d+" hits")}();
+!function(){"use strict";function a(a){var b=a.find(".col_9").clone();b.removeClass("col_9").addClass("col_9a").insertBefore(a.find(".col_9"))}function b(a,b,c){a&&(b<=parseFloat(a,10)+j?c.find(".col_9").css("color","green"):c.find(".col_9").css("color","red"))}function c(a){var b=a.find(".col_9").text().replace(",",".").replace("€","").trim();return parseFloat(b,10)}var d,e=$(".navBarTopText").length?$($(".navBarTopText").children()[0]):$($("#siteContents").children()[2]),f=$("tbody"),g=$("tbody").find("tr"),h=$($.find(".col_2")).find("a"),i=0,//flag green
+j=.1;//sort cards (name, price)
+!function(){g.sort(function(a,b){//TODO: price > 9.99
+var c=$(a).find(".col_2").text()+$(a).find(".col_9").text().trim(),d=$(b).find(".col_2").text()+$(b).find(".col_9").text().trim();return c.localeCompare(d)})}(),//apply order
+function(){f.empty(),$.each(g,function(a,b){f.append(b)})}(),//add column header
+function(){var a=$(".col_price").clone();a.removeClass("col_price").addClass("col_price_sold").html("&empty;").insertBefore($(".col_price")),//expand footer row
+$(".footerCell_0").attr("colspan",13)}(),//process entries
+$.each(h,function(e,f){var g=$(f),h=$(g.parent().parent()),j=g.text(),k=localStorage.getItem(j);//average price (sold)
+a(h),b(k,c(h),h),//set content of new cell and apply style
+j===d?(g.empty(),h.css("font-weight",100).find(".col_9a").empty()):(i++,h.find(".col_9a").text(k?(k+"  €").replace(".",","):"")),//remember name
+d=j}),//update hits value
+e.text(i+" hits")}();
