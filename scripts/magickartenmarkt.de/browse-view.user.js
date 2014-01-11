@@ -35,9 +35,8 @@
     //sort cards (name, price)
     (function sortCards() {
         $rows.sort(function(a, b){
-            //TODO: price > 9.99
-            var keyA = $(a).find('.col_2').text() + $(a).find('.col_9').text().trim(),
-                keyB = $(b).find('.col_2').text() + $(b).find('.col_9').text().trim();
+            var keyA = $(a).find('.col_2').text() + parseFloat($(a).find('.col_9').text().trim(), 10) + 1000,
+                keyB = $(b).find('.col_2').text() + parseFloat($(b).find('.col_9').text().trim(), 10) + 1000;
             return keyA.localeCompare(keyB);
         });
     }());
