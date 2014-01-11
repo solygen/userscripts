@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         card view: add average card price (sold)
 // @description  magiccardmarket.eu, magickartenmarkt.de
-// @version      0.0.2
+// @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -23,11 +23,12 @@
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/card-view-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
-!function(){"use strict";//get chart node
-var a=$($.parseHTML($("embed").attr("flashvars").split("dataXML=").splice(1,1)[0])).find("line"),//i18n
-b="de"===(navigator.language||navigator.userLanguage)?"Durchschnittspreis VK":"Average price (sold)",//extract data
-c=a.attr("startvalue"),d=a.attr("endvalue"),e=String(parseFloat(c+d).toFixed(2)+"  €").replace(".",","),f=document.title.split("(")[0].trim();//add current price to local storage
-localStorage.setItem(f,parseFloat(c+d).toFixed(2)),//remoe old one
-$(".custom").remove();//add data to dom
-var g=$($(".availTable").find("tr")[0]).clone();g.css("font-size","larger").css("color","chartreuse").addClass("custom"),g.find(".cell_0_1").text(e),g.find(".cell_0_0").text(b),$(".availTable").prepend(g);// in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
-var h=$('input[name="reg_referrer"]');h.length&&""===h.val()&&h.val("solygen")}();
+!function(){"use strict";function a(){return"de"===(navigator.language||navigator.userLanguage)?"Durchschnittspreis VK":"Average price (sold)"}//get chart node
+var b=$($.parseHTML($("embed").attr("flashvars").split("dataXML=").splice(1,1)[0])).find("line"),c=document.title.split("(")[0].trim(),//extract data
+d=b.attr("startvalue"),e=b.attr("endvalue"),f=parseFloat(d+e).toFixed(2),//i18n
+g=String(f+"  €").replace(".",",");//add current price to local storage
+localStorage.setItem(c,f);//clone row and apply style
+var h=$($(".availTable").find("tr")[0]).clone();//set style
+$(".availTable").css("font-weight",100),h.css("font-size","larger").css("font-weight","bold"),//set row cells
+h.find(".cell_0_0").text(a()),h.find(".cell_0_1").text(g),$(".availTable").prepend(h);// in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.
+var i=$('input[name="reg_referrer"]');i.length&&""===i.val()&&i.val("solygen")}();

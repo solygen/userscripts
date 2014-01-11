@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         card view: add average card price (sold)
 // @description  magiccardmarket.eu, magickartenmarkt.de
-// @version      0.0.2
+// @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -31,26 +31,33 @@
 
     //get chart node
     var tmp = $($.parseHTML($('embed').attr('flashvars').split('dataXML=').splice(1, 1)[0])).find('line'),
-        //i18n
-        text = ((navigator.language || navigator.userLanguage) === 'de' ? 'Durchschnittspreis VK' : 'Average price (sold)'),
+        name = document.title.split('(')[0].trim(),
         //extract data
-        start = tmp.attr('startvalue'),
-        end = tmp.attr('endvalue'),
-        mid = String(parseFloat((start + end)).toFixed(2) + '  €').replace('.', ','),
-        card = document.title.split('(')[0].trim();
+        min = tmp.attr('startvalue'),
+        max = tmp.attr('endvalue'),
+        average = parseFloat((min + max)).toFixed(2),
+        //i18n
+        price = String(average + '  €').replace('.', ',');
 
     //add current price to local storage
-    localStorage.setItem(card, parseFloat((start + end)).toFixed(2));
+    localStorage.setItem(name, average);
 
-    //remoe old one
-    $('.custom').remove();
-    //add data to dom
+
+    function getLabel () {
+        return ((navigator.language || navigator.userLanguage) === 'de' ? 'Durchschnittspreis VK' : 'Average price (sold)');
+    }
+
+    //clone row and apply style
     var row = $($('.availTable').find('tr')[0]).clone();
+    
+    //set style
+    $('.availTable').css('font-weight', 100);
     row.css('font-size', 'larger')
-        .css('color', 'chartreuse')
-        .addClass('custom');
-    row.find('.cell_0_1').text(mid);
-    row.find('.cell_0_0').text(text);
+        .css('font-weight', 'bold');
+
+    //set row cells
+    row.find('.cell_0_0').text(getLabel());
+    row.find('.cell_0_1').text(price);
     $('.availTable').prepend(row);
 
     // in case you would leave this field blank, please add my username. There are absolutly no disadvantages for you.

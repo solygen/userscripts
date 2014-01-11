@@ -28,11 +28,12 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 ## Documentation
 + [deckstats.net](https://github.com/solygen/userscripts/blob/master/doc/deckstats.net.md)
 + [magiccards.info](https://github.com/solygen/userscripts/blob/master/doc/magiccards.info.md)
++ [magickartenmarkt.de](https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md)
 
 ## Scripts ##
 ```
 scripts-min
-├── [ 136]  deckstats.net
+── [ 136]  deckstats.net
 │   ├── [1.7K]  deck-list-min.user.js
 │   └── [4.6K]  deck-view-min.user.js
 ├── [ 102]  fastfoodpreise.de
@@ -42,16 +43,17 @@ scripts-min
 ├── [ 136]  magiccards.info
 │   ├── [2.0K]  detail-view-min.user.js
 │   └── [ 738]  proxies-min.user.js
-├── [ 170]  magickartenmarkt.de
-│   ├── [1.2K]  browse-view-min.user.js
-│   ├── [2.1K]  card-view-min.user.js
-│   └── [2.6K]  redirect-min.user.js
+├── [ 204]  magickartenmarkt.de
+│   ├── [2.5K]  browse-view-min.user.js
+│   ├── [2.2K]  card-view-min.user.js
+│   ├── [2.6K]  redirect-min.user.js
+│   └── [1.4K]  wants-min.user.js
 ├── [ 102]  mcdonalds.de
 │   └── [4.8K]  prices-min.user.js
 ├── [ 170]  open-xchange.com
 │   ├── [1.6K]  appsuite-min.user.js
 │   ├── [1.6K]  gravatar-min.user.js
-│   └── [1.2K]  report-min.user.js
+│   └── [1.6K]  report-min.user.js
 └── [ 102]  slimkicker.com
     └── [ 982]  hide-min.user.js
 
