@@ -26,7 +26,7 @@
     var $summary = $('.navBarTopText').length ? $($('.navBarTopText').children()[0]) : $($('#siteContents').children()[2]),
         $table = $('tbody'),
         $rows = $('tbody').find('tr'),
-        list = $($.find('.col_2')).find('a'),
+        list,
         hits = 0,
         //flag green
         tolerance = 0.1,
@@ -106,6 +106,7 @@
     }
 
     //process entries
+    list = $($.find('.col_2')).find('a');
     $.each(list, function (index, value) {
         var $namecell = $(value),
             $row = $($namecell.parent().parent()),
