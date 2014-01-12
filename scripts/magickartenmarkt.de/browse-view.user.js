@@ -30,11 +30,13 @@
         hits = 0,
         //flag green
         tolerance = 0.1,
+        pricelevel = [],
         lastname;
  
     //sort cards (name, price)
     (function sortCards() {
         $rows.sort(function(a, b){
+            //hack: +1000 to get right sort order (e.g. 8, 12, 102)
             var keyA = $(a).find('.col_2').text() + parseFloat($(a).find('.col_9').text().trim(), 10) + 1000,
                 keyB = $(b).find('.col_2').text() + parseFloat($(b).find('.col_9').text().trim(), 10) + 1000;
             return keyA.localeCompare(keyB);
@@ -90,16 +92,30 @@
         return parseFloat(salesprice, 10);
     }
 
+    function setLevel() {
+        var level,
+            sum = 0;
+        //sum
+        $.each(pricelevel, function() {
+            sum += parseFloat(this) || 0;
+        });
+        //average
+        level = Math.round(sum/pricelevel.length*100)/100;
+        //add level to dom
+        $('.H1_PageTitle').text($('.H1_PageTitle').text() + ' (' + level + ')')
+    }
+
     //process entries
     $.each(list, function (index, value) {
         var $namecell = $(value),
             $row = $($namecell.parent().parent()),
             name = $namecell.text(),
-            price = localStorage.getItem(name);
+            price = localStorage.getItem(name),
+            salesprice = getSalePrice($row);
         
         //average price (sold)
         addCell($row);
-        colorizePrice(price, getSalePrice($row), $row);
+        colorizePrice(price, salesprice, $row);
 
         //set content of new cell and apply style
         if (name === lastname) {
@@ -108,6 +124,7 @@
                 .find('.col_9a').empty();
         } else {
             hits++;
+            pricelevel.push(salesprice / (price || salesprice));
             $row.find('.col_9a')
                 .text(price ? (price + '  €')
                 .replace('.', ',') : '');
@@ -115,6 +132,10 @@
         //remember name
         lastname = name;
     });
+
+    
+    //show price level
+    setLevel();
 
     //update hits value
     $summary.text(hits + ' hits');
