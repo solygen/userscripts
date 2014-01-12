@@ -35,10 +35,18 @@
  
     //sort cards (name, price)
     (function sortCards() {
-        $rows.sort(function(a, b){
-            //hack: +1000 to get right sort order (e.g. 8, 12, 102)
-            var keyA = $(a).find('.col_2').text() + parseFloat($(a).find('.col_9').text().trim(), 10) + 1000,
-                keyB = $(b).find('.col_2').text() + parseFloat($(b).find('.col_9').text().trim(), 10) + 1000;
+        $rows.sort(function(a, b){   
+            function getKey(node) {
+                var price = parseFloat($(node).find('.col_9').text().trim(), 10),
+                    $node = $(node);
+                //consider playset
+                if ($node.find('.col_7').find('img').size())
+                    price = price / 4;
+                //hack: +1000 to get right sort order (e.g. 8, 12, 102)
+                return $node.find('.col_2').text() + price + 1000;
+            }
+            var keyA = getKey(a),
+                keyB = getKey(b);
             return keyA.localeCompare(keyB);
         });
     }());
@@ -114,6 +122,10 @@
             price = localStorage.getItem(name),
             salesprice = getSalePrice($row);
         
+        //consider playset
+        if ($row.find('.col_7').find('img').size())
+            salesprice = salesprice / 4;
+
         //average price (sold)
         addCell($row);
         colorizePrice(price, salesprice, $row);
