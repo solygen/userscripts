@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         card view: add average card price (sold)
-// @description  magiccardmarket.eu, magickartenmarkt.de
+// @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#card-viewuserjs
 // @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

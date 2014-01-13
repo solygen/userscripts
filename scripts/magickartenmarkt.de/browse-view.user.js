@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         browse view: cleaner view by hiding duplicate name information
-// @description  magiccardmarket.eu, magickartenmarkt.de
+// @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#browser-viewuserjs
 // @version      0.0.1
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -110,7 +110,7 @@
         //average
         level = Math.round(sum/pricelevel.length*100)/100;
         //add level to dom
-        $('.H1_PageTitle').text($('.H1_PageTitle').text() + ' (' + level + ')')
+        $('.H1_PageTitle').text($('.H1_PageTitle').text() + ' (' + level + ')');
     }
 
     //process entries
