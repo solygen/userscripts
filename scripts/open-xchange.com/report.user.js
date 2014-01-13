@@ -2,6 +2,7 @@
 // @name         reports with multiple tables: remove empty rows and put total tabel to top
 // @description  bugs.open-xchange.com
 // @version      0.0.1
+// @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
