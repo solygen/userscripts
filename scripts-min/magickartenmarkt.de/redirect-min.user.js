@@ -2,6 +2,7 @@
 // @name         redirect: skip meta card page / skip search result page
 // @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#redirectuserjs
 // @version      0.0.1
+// @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT

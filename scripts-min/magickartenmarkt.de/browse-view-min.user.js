@@ -2,6 +2,7 @@
 // @name         browse view: cleaner view by hiding duplicate name information
 // @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#browser-viewuserjs
 // @version      0.0.1
+// @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
