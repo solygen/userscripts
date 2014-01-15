@@ -8,8 +8,9 @@
 ![image](https://rawgithub.com/solygen/userscripts/master/doc/img/magickartenmarkt.de-cardview-001.jpg)
 
 
-##browser-view.user.js
+##browse-view.user.js
 + add: new row with average price sold
++ add: calculate price level (add this information to headline and to local storage)
 + change: order table (card, sale price)
 + change: empty table cell when a card has more than one row 
 + change: colorize sales price based on average price (sold) 
@@ -25,6 +26,7 @@ hint: only average prices you've 'collected' with the card-view.user.js are avai
 
 ##wants-view.user.js
 + replaces 'price begins at' row with 'average price (sold)' 
++ change: price level based on gathered information by browse-view script
 
 ![image](https://rawgithub.com/solygen/userscripts/master/doc/img/magickartenmarkt.de-wants-001.jpg)
 

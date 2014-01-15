@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         browse view: cleaner view by hiding duplicate name information
-// @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#browser-viewuserjs
+// @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#browse-viewuserjs
 // @version      0.0.1
 // @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
 // @namespace    https://github.com/solygen/userscripts
@@ -33,10 +33,10 @@
         tolerance = 0.1,
         pricelevel = [],
         lastname;
- 
+
     //sort cards (name, price)
     (function sortCards() {
-        $rows.sort(function(a, b){   
+        $rows.sort(function(a, b){
             function getKey(node) {
                 var price = parseFloat($(node).find('.col_9').text().trim(), 10),
                     $node = $(node);
@@ -59,7 +59,7 @@
             $table.append(row);
         });
     }());
-    
+
     //add column header
     (function addColumnHeader() {
         var header = $('.col_price').clone();
@@ -103,6 +103,7 @@
 
     function setLevel() {
         var level,
+            name = $('.H1_PageTitle').text().split(' ')[2],
             sum = 0;
         //sum
         $.each(pricelevel, function() {
@@ -110,8 +111,9 @@
         });
         //average
         level = Math.round(sum/pricelevel.length*100)/100;
-        //add level to dom
+        //add level to dom/local storage
         $('.H1_PageTitle').text($('.H1_PageTitle').text() + ' (' + level + ')');
+        level = localStorage.setItem('seller:' + name, level);
     }
 
     //process entries
@@ -122,7 +124,7 @@
             name = $namecell.text(),
             price = localStorage.getItem(name),
             salesprice = getSalePrice($row);
-        
+
         //consider playset
         if ($row.find('.col_7').find('img').size())
             salesprice = salesprice / 4;
@@ -142,12 +144,12 @@
             $row.find('.col_9a')
                 .text(price ? (price + '  €')
                 .replace('.', ',') : '');
-        } 
+        }
         //remember name
         lastname = name;
     });
 
-    
+
     //show price level
     setLevel();
 

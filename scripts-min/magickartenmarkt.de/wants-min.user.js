@@ -18,7 +18,7 @@
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/wants-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
-!function(){"use strict";var a=$($.find(".col_2")).find("a");//replace start price column with average price (sold) 
-$.each(a,function(a,b){var c=$(b),d=$(c.parent().parent()),e=c.text(),f=localStorage.getItem(e)||"";//set cell
-d.find(".col_12").text(f?(f+"  €").replace(".",","):"")});//adjust header (keep it sortable)
-var b=$(".headerCell_10").html().split("<");b[0]="&empty;",$(".headerCell_12").html(b.join("<"))}();
+!function(){"use strict";var a=$($.find(".col_2")).find("a");//replace start price with average price sold
+$.each(a,function(a,b){var c=$(b),d=$(c.parent().parent()),e=c.text(),f=localStorage.getItem(e)||"";d.find(".col_12").text(f?(f+"  €").replace(".",","):"")});//adjust header (keep it sortable)
+var b=$(".headerCell_10").html().split("<");b[0]="&empty;",$(".headerCell_12").html(b.join("<")),//get price level gather by browse view
+a=$($.find(".sellerTable .col_0")),$.each(a,function(a,b){var c=$(b),d=$(c.parent()),e=d.find(".col_3"),f=c.text().split("(")[0].trim(),g=localStorage.getItem("seller:"+f)||void 0;g&&e.text("("+g+") ")})}();

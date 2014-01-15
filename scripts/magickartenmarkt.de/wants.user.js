@@ -23,16 +23,16 @@
 (function () {
 
     'use strict';
-    
+
     var list = $($.find('.col_2')).find('a');
-    
-    //replace start price column with average price (sold) 
+
+    //replace start price with average price sold
     $.each(list, function (index, value) {
-        var $elem = $(value), 
+        var $elem = $(value),
             $row = $($elem.parent().parent()),
             name = $elem.text(),
             price = localStorage.getItem(name) || '';
-        //set cell
+
         $row.find('.col_12')
             .text(price ? (price + '  €')
             .replace('.', ',') : '');
@@ -44,5 +44,18 @@
         .split('<');
     header[0] = '&empty;';
     $('.headerCell_12').html(header.join('<'));
+
+
+    //get price level gather by browse view
+    list = $($.find('.sellerTable .col_0'));
+    $.each(list, function (index, value) {
+        var $elem = $(value),
+            $row = $($elem.parent()),
+            $level = $row.find('.col_3'),
+            name = $elem.text().split('(')[0].trim(),
+            level = localStorage.getItem('seller:' + name) || undefined;
+        if (level)
+            $level.text('(' + level + ') ');
+    });
 
 })();
