@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         wants: add prices
 // @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#wants-viewuserjs
-// @version      0.0.1
+// @version      0.0.2
 // @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -24,13 +24,15 @@
 
     'use strict';
 
-    var list = $($.find('.col_2')).find('a');
+    var list = $($.find('.col_2')).find('a'),
+        FAVORITE = ' \u2605',
+        NOFAVORITE = ''; //'\u2606';
 
     //replace start price with average price sold
     $.each(list, function (index, value) {
         var $elem = $(value),
             $row = $($elem.parent().parent()),
-            name = $elem.text(),
+            name = $elem.text().trim(),
             price = localStorage.getItem(name) || '';
 
         $row.find('.col_12')
@@ -56,6 +58,10 @@
             level = localStorage.getItem('seller:' + name) || undefined;
         if (level)
             $level.text('(' + level + ') ');
+        //flag favorite users
+        var star = localStorage.getItem('favorite:' + name) ? FAVORITE : NOFAVORITE,
+            fav = $('<span class="favorite">').on('click', function () {toggle(name);} ).append(star);
+        $elem.append(fav);
     });
 
 })();

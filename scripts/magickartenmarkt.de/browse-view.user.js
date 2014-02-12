@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         browse view: cleaner view by hiding duplicate name information
 // @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#browse-viewuserjs
-// @version      0.0.1
+// @version      0.0.2
 // @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -32,19 +32,22 @@
         //flag green
         tolerance = 0.1,
         pricelevel = [],
-        lastname;
+        lastname,
+        FAVORITE = ' \u2665'; //' \u2605',
+        NOFAVORITE = ' \u2661'; //'\u2606';
+
 
     //sort cards (name, price)
     (function sortCards() {
         $rows.sort(function(a, b){
             function getKey(node) {
-                var price = parseFloat($(node).find('.col_9').text().trim(), 10),
+                var price = parseFloat($($(node).children()[13]).text().trim().replace(',', '.').replace('€', ''), 10),
                     $node = $(node);
                 //consider playset
-                if ($node.find('.col_7').find('img').size())
+                if ($($(node).children()[9]).find('img').size())
                     price = price / 4;
                 //hack: +1000 to get right sort order (e.g. 8, 12, 102)
-                return $node.find('.col_2').text() + price + 1000;
+                return $($(node).children()[2]).find('a').text() + price + 1000;
             }
             var keyA = getKey(a),
                 keyB = getKey(b);
@@ -74,32 +77,44 @@
 
 
     function addCell(row) {
-        var cell = row.find('.col_9').clone();
+        var cell = $(row.children()[10]).clone();
         cell
-            .removeClass('col_9')
-            .addClass('col_9a')
-            .insertBefore(row.find('.col_9'));
+             .addClass('col_price_sold')
+            .insertBefore($(row.children()[13]));
     }
 
     function colorizePrice(price, saleprice, row) {
+
+        var field = $(row.children()[14]);
         if (!price) {
             return;
         } else if (saleprice <= parseFloat(price, 10) + tolerance) {
-            row.find('.col_9').css('color', 'green');
+            field.css('color', 'green');
         } else {
-            row.find('.col_9').css('color', 'red');
+            field.css('color', 'red');
         }
     }
 
     function getSalePrice($row) {
-        var salesprice = $row
-                            .find('.col_9')
+        var salesprice = $($row.children()[13])
                             .text()
                             .replace(',', '.')
                             .replace('€', '')
                             .trim();
         return parseFloat(salesprice, 10);
     }
+
+    function toggle(name) {
+        var isfav = $('.favorite').text() === FAVORITE;
+        if (isfav) {
+            $('.favorite').text(NOFAVORITE);
+            localStorage.removeItem('favorite:' + name);
+        } else {
+            $('.favorite').text(FAVORITE);
+            localStorage.setItem('favorite:' + name, !isfav);
+        }
+    }
+
 
     function setLevel() {
         var level,
@@ -114,19 +129,23 @@
         //add level to dom/local storage
         $('.H1_PageTitle').text($('.H1_PageTitle').text() + ' (' + level + ')');
         level = localStorage.setItem('seller:' + name, level);
+        //add star
+        var star = localStorage.getItem('favorite:' + name) ? FAVORITE : NOFAVORITE,
+            fav = $('<span class="favorite" style="color: red; cursor: pointer">').on('click', function () {toggle(name);} ).append(star);
+        $('.H1_PageTitle').append(fav);
     }
 
     //process entries
-    list = $($.find('.col_2')).find('a');
+    list = $($.find('.dualTextDiv')).find('a');
     $.each(list, function (index, value) {
         var $namecell = $(value),
-            $row = $($namecell.parent().parent()),
+            $row = $($namecell.parent().parent().parent().parent()),
             name = $namecell.text(),
             price = localStorage.getItem(name),
             salesprice = getSalePrice($row);
 
         //consider playset
-        if ($row.find('.col_7').find('img').size())
+        if ($($row.children()[10]).find('img').size())
             salesprice = salesprice / 4;
 
         //average price (sold)
@@ -135,13 +154,13 @@
 
         //set content of new cell and apply style
         if (name === lastname) {
-            $namecell.empty();
+            $($row.children()[2]).empty();
             $row.css('font-weight', 100)
-                .find('.col_9a').empty();
+                .find('.col_price_sold').empty();
         } else {
             hits++;
             pricelevel.push(salesprice / (price || salesprice));
-            $row.find('.col_9a')
+            $row.find('.col_price_sold')
                 .text(price ? (price + '  €')
                 .replace('.', ',') : '');
         }

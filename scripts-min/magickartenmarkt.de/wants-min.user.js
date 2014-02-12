@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         wants: add prices
 // @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#wants-viewuserjs
-// @version      0.0.1
+// @version      0.0.2
 // @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -18,7 +18,9 @@
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/wants-min.user.js
 // @homepage     https://github.com/solygen/userscripts
 // ==/UserScript==
-!function(){"use strict";var a=$($.find(".col_2")).find("a");//replace start price with average price sold
-$.each(a,function(a,b){var c=$(b),d=$(c.parent().parent()),e=c.text(),f=localStorage.getItem(e)||"";d.find(".col_12").text(f?(f+"  €").replace(".",","):"")});//adjust header (keep it sortable)
-var b=$(".headerCell_10").html().split("<");b[0]="&empty;",$(".headerCell_12").html(b.join("<")),//get price level gather by browse view
-a=$($.find(".sellerTable .col_0")),$.each(a,function(a,b){var c=$(b),d=$(c.parent()),e=d.find(".col_3"),f=c.text().split("(")[0].trim(),g=localStorage.getItem("seller:"+f)||void 0;g&&e.text("("+g+") ")})}();
+!function(){"use strict";var a=$($.find(".col_2")).find("a"),b=" ★",c="";//'\u2606';
+//replace start price with average price sold
+$.each(a,function(a,b){var c=$(b),d=$(c.parent().parent()),e=c.text().trim(),f=localStorage.getItem(e)||"";d.find(".col_12").text(f?(f+"  €").replace(".",","):"")});//adjust header (keep it sortable)
+var d=$(".headerCell_10").html().split("<");d[0]="&empty;",$(".headerCell_12").html(d.join("<")),//get price level gather by browse view
+a=$($.find(".sellerTable .col_0")),$.each(a,function(a,d){var e=$(d),f=$(e.parent()),g=f.find(".col_3"),h=e.text().split("(")[0].trim(),i=localStorage.getItem("seller:"+h)||void 0;i&&g.text("("+i+") ");//flag favorite users
+var j=localStorage.getItem("favorite:"+h)?b:c,k=$('<span class="favorite">').on("click",function(){toggle(h)}).append(j);e.append(k)})}();
