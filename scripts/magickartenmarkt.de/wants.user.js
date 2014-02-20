@@ -60,7 +60,7 @@
             $level.text('(' + level + ') ');
         //flag favorite users
         var star = localStorage.getItem('favorite:' + name) ? FAVORITE : NOFAVORITE,
-            fav = $('<span class="favorite">').on('click', function () {toggle(name);} ).append(star);
+            fav = $('<span class="favorite" style="color: red;">').on('click', function () {toggle(name);} ).append(star);
         $elem.append(fav);
     });
 

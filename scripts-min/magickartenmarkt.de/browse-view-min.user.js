@@ -23,8 +23,8 @@ $.each(m,function(){c+=parseFloat(this)||0}),//average
 a=Math.round(c/m.length*100)/100,//add level to dom/local storage
 $(".H1_PageTitle").text($(".H1_PageTitle").text()+" ("+a+")"),a=localStorage.setItem("seller:"+b,a);//add star
 var e=localStorage.getItem("favorite:"+b)?n:NOFAVORITE,f=$('<span class="favorite" style="color: red; cursor: pointer">').on("click",function(){d(b)}).append(e);$(".H1_PageTitle").append(f)}var f,g,h=$(".navBarTopText").length?$($(".navBarTopText").children()[0]):$($("#siteContents").children()[2]),i=$("tbody"),j=$("tbody").find("tr"),k=0,//flag green
-l=.1,m=[],n=" ♥";//' \u2605',
-NOFAVORITE=" ♡",//'\u2606';
+l=.1,m=[],n=" ★";//' \u2665',
+NOFAVORITE=" ☆",//'\u2661';
 //sort cards (name, price)
 function(){j.sort(function(a,b){function c(a){{var b=parseFloat($($(a).children()[13]).text().trim().replace(",",".").replace("€",""),10);$(a)}//hack: +1000 to get right sort order (e.g. 8, 12, 102)
 //consider playset

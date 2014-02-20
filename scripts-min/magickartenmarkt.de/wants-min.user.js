@@ -23,4 +23,4 @@
 $.each(a,function(a,b){var c=$(b),d=$(c.parent().parent()),e=c.text().trim(),f=localStorage.getItem(e)||"";d.find(".col_12").text(f?(f+"  €").replace(".",","):"")});//adjust header (keep it sortable)
 var d=$(".headerCell_10").html().split("<");d[0]="&empty;",$(".headerCell_12").html(d.join("<")),//get price level gather by browse view
 a=$($.find(".sellerTable .col_0")),$.each(a,function(a,d){var e=$(d),f=$(e.parent()),g=f.find(".col_3"),h=e.text().split("(")[0].trim(),i=localStorage.getItem("seller:"+h)||void 0;i&&g.text("("+i+") ");//flag favorite users
-var j=localStorage.getItem("favorite:"+h)?b:c,k=$('<span class="favorite">').on("click",function(){toggle(h)}).append(j);e.append(k)})}();
+var j=localStorage.getItem("favorite:"+h)?b:c,k=$('<span class="favorite" style="color: red;">').on("click",function(){toggle(h)}).append(j);e.append(k)})}();

@@ -33,8 +33,8 @@
         tolerance = 0.1,
         pricelevel = [],
         lastname,
-        FAVORITE = ' \u2665'; //' \u2605',
-        NOFAVORITE = ' \u2661'; //'\u2606';
+        FAVORITE = ' \u2605'; //' \u2665',
+        NOFAVORITE = ' \u2606'; //'\u2661';
 
 
     //sort cards (name, price)
