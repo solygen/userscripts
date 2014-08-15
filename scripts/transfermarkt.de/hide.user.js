@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         transfermarkt: hide ads
 // @description  transfermarkt.de
-// @version      0.0.1
+// @version      0.0.2
 // @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -19,6 +19,7 @@
 (function () {
     //all
     $('iframe, .werbung, .naviback').remove();
+    $('.bildquelle').remove();
     //landing page only
     if (window.location.href.length <= 29) {
         $('.werbung_wetten').parent().remove();
