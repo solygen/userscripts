@@ -2,11 +2,10 @@
 // @name         transfermarkt: hide ads
 // @description  transfermarkt.de
 // @version      0.0.2
-// @icon         https://raw2.github.com/solygen/userscripts/master/doc/icon/icon_032.png
+// @icon         http://www.google.com/s2/favicons?domain=www.transfermarkt.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
-// @require      http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.js
 //
 // @include      http://www.transfermarkt.de/*
 //
