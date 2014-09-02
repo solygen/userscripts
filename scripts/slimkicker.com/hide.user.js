@@ -2,7 +2,7 @@
 // @name         slimkicker.com: hide some ui elements
 // @description  slimkicker.com
 // @version      0.0.1
-// @icon         http://www.google.com/s2/favicons?domain=www.slimkicker.com
+// @icon         http://www.slimkicker.com/img/badges/no-eating-after-dinner.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
