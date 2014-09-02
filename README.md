@@ -32,30 +32,50 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 
 ## Scripts ##
 ```
-scripts-min
-── [ 136]  deckstats.net
-│   ├── [1.7K]  deck-list-min.user.js
-│   └── [4.6K]  deck-view-min.user.js
-├── [ 102]  fastfoodpreise.de
-│   └── [1.1K]  toJson-min.user.js
+scripts
+├── [ 102]  bricklink.com
+│   └── [1.3K]  data-extract.user.js
+├── [ 170]  deckstats.net
+│   ├── [2.0K]  deck-list.user.js
+│   └── [7.9K]  deck-view.user.js
+├── [ 136]  fastfoodpreise.de
+│   └── [1.4K]  toJson.user.js
+├── [ 102]  fettrechner.de
+│   └── [ 979]  kA.user.js
 ├── [ 102]  github.com
-│   └── [ 756]  trending-min.user.js
-├── [ 136]  magiccards.info
-│   ├── [2.0K]  detail-view-min.user.js
-│   └── [ 738]  proxies-min.user.js
-├── [ 204]  magickartenmarkt.de
-│   ├── [2.5K]  browse-view-min.user.js
-│   ├── [2.2K]  card-view-min.user.js
-│   ├── [2.6K]  redirect-min.user.js
-│   └── [1.4K]  wants-min.user.js
+│   └── [ 944]  trending.user.js
+├── [ 102]  imdb.com
+│   └── [1.3K]  link-to-trakt.user.js
+├── [ 170]  kleinanzeigen.ebay.de
+│   ├── [2.1K]  hide-ads.user.js
+│   └── [2.3K]  listimage.user.js
+├── [  68]  magiccardmarket.eu
+├── [ 170]  magiccards.info
+│   ├── [2.7K]  detail-view.user.js
+│   └── [ 797]  proxies.user.js
+├── [ 238]  magickartenmarkt.de
+│   ├── [6.0K]  browse-view.user.js
+│   ├── [1.6K]  card-view.user.js
+│   ├── [2.0K]  redirect.user.js
+│   └── [2.6K]  wants.user.js
 ├── [ 102]  mcdonalds.de
-│   └── [4.8K]  prices-min.user.js
-├── [ 170]  open-xchange.com
-│   ├── [1.6K]  appsuite-min.user.js
-│   ├── [1.6K]  gravatar-min.user.js
-│   └── [1.6K]  report-min.user.js
-└── [ 102]  slimkicker.com
-    └── [ 982]  hide-min.user.js
+│   └── [ 10K]  prices.user.js
+├── [ 204]  open-xchange.com
+│   ├── [3.1K]  appsuite.user.js
+│   ├── [2.8K]  gravatar.user.js
+│   └── [2.4K]  report.user.js
+├── [ 102]  slimkicker.com
+│   └── [1.1K]  hide.user.js
+├── [ 170]  transfermarkt.de
+│   ├── [ 995]  hide.user.js
+│   └── [1.3K]  transfer-externals.user.js
+├── [ 102]  wdr.de
+│   └── [1011]  hide.user.js
+├── [ 102]  wetter.com
+│   └── [ 939]  hide.user.js
+└── [ 102]  zalando.de
+    └── [1.7K]  sortbydiscount.user.js
+
 
 ```
 
