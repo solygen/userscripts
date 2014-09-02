@@ -9,8 +9,8 @@
 //
 // @include      http://www.zalando.de/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/zalando.de/sortbydiscount-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/zalando.de/sortbydiscount-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/zalando.de/sortbydiscount.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/zalando.de/sortbydiscount.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==

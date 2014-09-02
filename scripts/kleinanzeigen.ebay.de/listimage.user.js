@@ -9,8 +9,8 @@
 //
 // @include      http://kleinanzeigen.ebay.de/anzeigen/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/kleinanzeigen.ebay.de/listimage.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/kleinanzeigen.ebay.de/listimage.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/kleinanzeigen.ebay.de/listimage.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/kleinanzeigen.ebay.de/listimage.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

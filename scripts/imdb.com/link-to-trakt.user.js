@@ -10,8 +10,8 @@
 // @include      http://www.imdb.com/title/*
 // @include      https://www.imdb.com/title/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/imdb.com/link-to-trakt-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/imdb.com/link-to-trakt-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/imdb.com/link-to-trakt.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/imdb.com/link-to-trakt.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==

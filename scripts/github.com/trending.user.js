@@ -9,8 +9,8 @@
 //
 // @include      https://github.com/trending*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/github.com/trending-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/github.com/trending-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/github.com/trending.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/github.com/trending.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

@@ -10,8 +10,8 @@
 //
 // @include      http://deckstats.net/decks/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-list-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/deckstats.net/deck-list-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/deckstats.net/deck-list.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/deckstats.net/deck-list.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==
@@ -39,12 +39,12 @@
 //         debugger;
 //         var link = $(line).find('a').attr('href');
 //         var deck = $('<iframe src="' + link + '" frameborder="0" scrolling="no" id="myFrame"></iframe>').appendTo($(document.body));
-        
+
 //         deck.load(
 //                 function() {
 //                     debugger;
 //                     var tags = $(deck.contents()).find('.deck_tag').text();
-//                     $(line).append($('<td>').text(tags)); 
+//                     $(line).append($('<td>').text(tags));
 //                 })
 //     })
 

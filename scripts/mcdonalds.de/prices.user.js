@@ -9,8 +9,8 @@
 //
 // @include      http://www.mcdonalds.de/produkte/alle-produkte
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/prices-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/prices-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/fastfoodpreise.de/prices.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/fastfoodpreise.de/prices.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==
@@ -307,7 +307,7 @@
                 "size": "",
                 "price": "€ 1,00"
             }
-        } 
+        }
     };
 
     var data = prices.data,

@@ -10,8 +10,8 @@
 //
 // @include      http://www.wetter.com/wetter_aktuell/wettervorhersage/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/wetter.com/hide-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/wetter.com/hide-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/wetter.com/hide.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/wetter.com/hide.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

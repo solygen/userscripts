@@ -9,8 +9,8 @@
 //
 // @include      http://www.transfermarkt.de/*/transfers/wettbewerb/L*/saison_id/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/transfermarkt.de/transfer-externals-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/transfermarkt.de/transfer-externals.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/transfermarkt.de/transfer-externals.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/transfermarkt.de/transfer-externals.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

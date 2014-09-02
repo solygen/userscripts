@@ -14,8 +14,8 @@
 // @include      https://es.magiccardmarket.eu/Products/Singles/*
 // @include      https://id.magiccardmarket.eu/Products/Singles/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/card-view-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/card-view-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/magickartenmarkt.de/card-view.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/magickartenmarkt.de/card-view.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

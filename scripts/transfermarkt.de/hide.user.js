@@ -9,8 +9,8 @@
 //
 // @include      http://www.transfermarkt.de/*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/transfermarkt.de/hide-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/transfermarkt.de/hide-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/transfermarkt.de/hide.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/transfermarkt.de/hide.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

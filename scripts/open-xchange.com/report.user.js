@@ -10,8 +10,8 @@
 //
 // @include      https://bugs.open-xchange.com/report.cgi?x_axis_field=*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/report-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/open-xchange.com/report-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/open-xchange.com/report.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/open-xchange.com/report.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

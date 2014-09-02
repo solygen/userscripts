@@ -9,8 +9,8 @@
 //
 // @include      http://www.fettrechner.de/cgi-bin/kalorientabelle.pl*
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/fettrechner.de/kA-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/fettrechner.de/kA.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/fettrechner.de/kA.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/fettrechner.de/kA.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==

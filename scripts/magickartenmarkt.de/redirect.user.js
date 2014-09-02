@@ -14,8 +14,8 @@
 // @include      https://es.magiccardmarket.eu/Cards/*
 // @include      https://id.magiccardmarket.eu/Cards/*
 //
-// @updateURL    https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/redirect-min.user.js
-// @downloadURL  https://raw.github.com/solygen/userscripts/master/scripts-min/magickartenmarkt.de/redirect-min.user.js
+// @updateURL    https://raw.github.com/solygen/userscripts/master/scripts/magickartenmarkt.de/redirect.user.js
+// @downloadURL  https://raw.github.com/solygen/userscripts/master/scripts/magickartenmarkt.de/redirect.user.js
 // @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==

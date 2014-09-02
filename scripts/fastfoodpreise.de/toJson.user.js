@@ -9,8 +9,8 @@
 //
 // @include      http://www.fastfoodpreise.de/preisliste/*.html
 //
-// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/toJson-min.user.js
-// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts-min/fastfoodpreise.de/toJson-min.user.js
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/fastfoodpreise.de/toJson.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/fastfoodpreise.de/toJson.user.js
 // @homepage     https://github.com/solygen/userscripts
 
 // ==/UserScript==
