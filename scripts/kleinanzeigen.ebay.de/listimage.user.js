@@ -41,14 +41,15 @@
                         image.remove();
 
                         //get full size url
-                        url = url.replace('_9.', '_3.');
+                        url = url.replace('_9.', '_3.')
+                                 .replace('(', '');
                         link = "url(" + url + ")";
 
                         //change style
                         node.css({
                             'height': '140px',
                             'width': '140px',
-                            'background-image': link,
+                            'background-image': encodeURI(link),
                             'background-position': 'center',
                             'background-size': 'cover',
                             '-webkit-background-size': 'cover',
