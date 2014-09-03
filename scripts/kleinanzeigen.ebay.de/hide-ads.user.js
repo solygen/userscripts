@@ -23,7 +23,7 @@
 
     // hide adds
     setTimeout(function () {
-        $('#srp_adsense-top, #srp_adsense-middle, #srp_adsense-bottom, #srchrslt-adtable-topads, .managead-listitem-features').remove();
+        $('#srp_adsense-top, #srp_adsense-middle, #srp_adsense-bottom, #srchrslt-adtable-topads, .managead-listitem-features, .headerbox.t-border-yellow').remove();
     }, 100)
 
     // clear title
