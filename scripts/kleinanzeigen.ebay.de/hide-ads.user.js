@@ -22,6 +22,11 @@
     'use strict';
 
     // hide adds
-    $('#srp_adsense-top, #srp_adsense-middle, #srp_adsense-bottom, #srchrslt-adtable-topads').remove();
+    setTimeout(function () {
+        $('#srp_adsense-top, #srp_adsense-middle, #srp_adsense-bottom, #srchrslt-adtable-topads, .managead-listitem-features').remove();
+    }, 100)
+
+    // clear title
+    document.title = (document.title.split('|')[0]).trim();
 
 })();
