@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         use relative times (detail, list)
 // @description  kleinanzeigen.ebay.de
-// @version      0.0.1
+// @version      0.0.2
 // @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -34,7 +34,8 @@
         var nodes = $('.ad-listitem-addon');
         $.each(nodes, function (index, node) {
             node = $(node);
-            var val = node.text().trim(), mom;
+            var val = node.text().trim(), mom,
+                children = node.children();
             // ignore 'heute, gestern'
             if (val.indexOf('G') !== 0 && val.indexOf('H') !== 0) {
                 mom = moment(val, 'DD.MM.YYYY');
@@ -47,6 +48,8 @@
                 node.css('color', val.indexOf('G') === 0 ? undefined : '#5cb85c');
             }
             node.text(mom.lang('de').fromNow(true));
+            // used for 'merkliste' where action are put into subnode
+            node.append(children);
         });
     }
 })();
