@@ -15,21 +15,26 @@
 //
 // ==/UserScript==
 (function () {
-  
+    
     'use strict';
+    
+    $('.panel-ownership').hide();
+    
+    $($('.motd')[1]).hide();
+    $($('.motd')[0]).hide();
     
     $('tr.app').each(function (index, row) {
         row = $(row);
-
-    	var score = $(row.find('td')[6]),
+        
+        var score = $(row.find('td')[6]),
             scorevalue = parseInt(score.attr('data-sort')),
             discount = row.find('td.price-discount, td.price-discount-minor'),
-            discountvalue = parseInt(discount.attr('data-sort'));
+            discountvalue = parseInt(discount.attr('data-sort')),
             price = row.find('td.price-final'),
             pricevalue = parseInt(price.attr('data-sort'));
         
         // remove 
-        if (scorevalue <= 80 || pricevalue > 500 || discountvalue <= 75) {
+        if (scorevalue < 75 || pricevalue > 500 || discountvalue < 75) {
             row.hide();
         }
     })
@@ -38,5 +43,5 @@
     $('.badge').text(
         $('tr.app:visible').length
     );
-
+    
 }) ();
