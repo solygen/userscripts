@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name steamdb.info/sales
 // @description filter irrelevant entries
-// @version 0.0.2
+// @version 0.0.3
 // @icon http://www.google.com/s2/favicons?domain=www.steamdb.info
 // @namespace https://github.com/solygen/userscripts
 // @repository https://github.com/solygen/userscripts.git
@@ -24,6 +24,7 @@
 
     // each section
     $('.sales-section').each(function (index, section) {
+        section = $(section);
 
         // each item
         section.find('tr.app').each(function (index, row) {
@@ -37,15 +38,22 @@
                 pricevalue = parseInt(price.attr('data-sort'));
 
             // remove
-            if (scorevalue < 75 || pricevalue > 500 || discountvalue < 75) {
+            if (scorevalue < 80 || pricevalue > 700 || discountvalue < 50) {
                 row.hide();
             }
         });
 
         // update badge
+        var visiblecount = section.find('tr.app:visible').length;
         section.find('.badge').text(
-            $('tr.app:visible').length
+            visiblecount
         );
+
+        if (visiblecount === 0) {
+            section.hide();
+        } else {
+            section.show();
+        }
 
     });
 
