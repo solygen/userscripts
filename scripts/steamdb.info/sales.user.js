@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name steamdb.info/sales
 // @description filter irrelevant entries
-// @version 0.0.1
+// @version 0.0.2
 // @icon http://www.google.com/s2/favicons?domain=www.steamdb.info
 // @namespace https://github.com/solygen/userscripts
 // @repository https://github.com/solygen/userscripts.git
@@ -22,25 +22,31 @@
     $($('.motd')[1]).hide();
     $($('.motd')[0]).hide();
 
-    $('tr.app').each(function (index, row) {
-        row = $(row);
+    // each section
+    $('.sales-section').each(function (index, section) {
 
-        var score = $(row.find('td')[6]),
-            scorevalue = parseInt(score.attr('data-sort')),
-            discount = row.find('td.price-discount, td.price-discount-minor'),
-            discountvalue = parseInt(discount.attr('data-sort')),
-            price = row.find('td.price-final'),
-            pricevalue = parseInt(price.attr('data-sort'));
+        // each item
+        section.find('tr.app').each(function (index, row) {
+            row = $(row);
 
-        // remove
-        if (scorevalue < 75 || pricevalue > 500 || discountvalue < 75) {
-            row.hide();
-        }
-    })
+            var score = $(row.find('td')[6]),
+                scorevalue = parseInt(score.attr('data-sort')),
+                discount = row.find('td.price-discount, td.price-discount-minor'),
+                discountvalue = parseInt(discount.attr('data-sort')),
+                price = row.find('td.price-final'),
+                pricevalue = parseInt(price.attr('data-sort'));
 
-    // update badge
-    $('.badge').text(
-        $('tr.app:visible').length
-    );
+            // remove
+            if (scorevalue < 75 || pricevalue > 500 || discountvalue < 75) {
+                row.hide();
+            }
+        });
+
+        // update badge
+        section.find('.badge').text(
+            $('tr.app:visible').length
+        );
+
+    });
 
 }) ();
