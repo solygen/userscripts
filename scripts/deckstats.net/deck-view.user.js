@@ -2,6 +2,7 @@
 // @name         deck view: different tweaks
 // @description  deckstats.net
 // @version      1.0.0
+// @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.deckstats.net
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

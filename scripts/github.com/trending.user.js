@@ -2,6 +2,7 @@
 // @name         hide already stared trending repos
 // @description  github.com
 // @version      1.0.0
+// @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.github.com
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

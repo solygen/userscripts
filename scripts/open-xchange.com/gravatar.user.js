@@ -2,6 +2,7 @@
 // @name         Bugzilla Gravatar
 // @description  bugzilla
 // @version      1.0.0
+// @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.bugzilla.org
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

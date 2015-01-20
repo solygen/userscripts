@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         appsuite: age
 // @version      1.0.0
+// @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.ox.io
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

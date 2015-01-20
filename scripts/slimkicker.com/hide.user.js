@@ -2,6 +2,7 @@
 // @name         slimkicker.com: hide some ui elements
 // @description  slimkicker.com
 // @version      1.0.0
+// @grant        none
 // @icon         http://www.slimkicker.com/img/badges/no-eating-after-dinner.png
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

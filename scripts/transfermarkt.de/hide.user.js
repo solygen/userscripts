@@ -2,6 +2,7 @@
 // @name         transfermarkt: hide ads
 // @description  transfermarkt.de
 // @version      1.0.0
+// @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.transfermarkt.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

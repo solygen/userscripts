@@ -2,6 +2,7 @@
 // @name         bricklink
 // @description  extract prices as json to browser console
 // @version      1.0.0
+// @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.bricklink.com
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

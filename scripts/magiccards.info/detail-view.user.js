@@ -2,6 +2,7 @@
 // @name         cardview: link to mkm/mcm when clicking on card image
 // @description  magiccards.info
 // @version      1.0.0
+// @grant        none
 // @icon         http://magiccards.info/images/mini.gif
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
