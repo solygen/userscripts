@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         show link to trakt.tv (based on IMDB2Trakt from Arias)
 // @description  imdb.com
-// @version      0.0.1
+// @version      1.0.0
 // @icon         http://www.google.com/s2/favicons?domain=www.imdb.com
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

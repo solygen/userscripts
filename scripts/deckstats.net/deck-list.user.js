@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         deck list: sort your deck list by name and hide timestamp
 // @description  deckstats.net
-// @version      0.0.1
+// @version      1.0.0
 // @icon         http://www.google.com/s2/favicons?domain=www.deckstats.net
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

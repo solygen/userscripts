@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         marks external transfers
 // @description  transfermarkt.de
-// @version      0.0.1
+// @version      1.0.0
 // @icon         http://www.google.com/s2/favicons?domain=www.transfermarkt.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

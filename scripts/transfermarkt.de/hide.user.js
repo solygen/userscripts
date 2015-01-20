@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         transfermarkt: hide ads
 // @description  transfermarkt.de
-// @version      0.0.2
+// @version      1.0.0
 // @icon         http://www.google.com/s2/favicons?domain=www.transfermarkt.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git

@@ -1,17 +1,17 @@
 // ==UserScript==
-// @name steamdb.info/sales
-// @description filter irrelevant entries
-// @version 0.0.3
-// @icon http://www.google.com/s2/favicons?domain=www.steamdb.info
-// @namespace https://github.com/solygen/userscripts
-// @repository https://github.com/solygen/userscripts.git
-// @license MIT
+// @name         steamdb.info/sales
+// @description  filter irrelevant entries
+// @version      1.0.0
+// @icon         http://www.google.com/s2/favicons?domain=www.steamdb.info
+// @namespace    https://github.com/solygen/userscripts
+// @repository   https://github.com/solygen/userscripts.git
+// @license      MIT
 //
-// @include https://steamdb.info/sales/*
+// @include      https://steamdb.info/sales/*
 //
-// @updateURL https://rawgithub.com/solygen/userscripts/master/scripts/steamdb.info/sales.user.js
-// @downloadURL https://rawgithub.com/solygen/userscripts/master/scripts/steamdb.info/sales.user.js
-// @homepage https://github.com/solygen/userscripts
+// @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/steamdb.info/sales.user.js
+// @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/steamdb.info/sales.user.js
+// @homepage     https://github.com/solygen/userscripts
 //
 // ==/UserScript==
 (function () {
@@ -30,8 +30,8 @@
         section.find('tr.app').each(function (index, row) {
             row = $(row);
 
-            var score = $(row.find('td')[6]),
-                scorevalue = parseInt(score.attr('data-sort')),
+            var score = $(row.find('td').last()),
+                scorevalue = parseInt((score.attr('data-sort') || '0').replace('%','')),
                 discount = row.find('td.price-discount, td.price-discount-minor'),
                 discountvalue = parseInt(discount.attr('data-sort')),
                 price = row.find('td.price-final'),

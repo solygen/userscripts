@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         use relative times (detail, list)
 // @description  kleinanzeigen.ebay.de
-// @version      0.0.2
+// @version      1.0.0
 // @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
