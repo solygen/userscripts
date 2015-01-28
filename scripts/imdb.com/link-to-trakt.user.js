@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         show link to trakt.tv (based on IMDB2Trakt from Arias)
 // @description  imdb.com
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.imdb.com
 // @namespace    https://github.com/solygen/userscripts
@@ -31,7 +31,7 @@
     separator.innerHTML = '&nbsp;-&nbsp;';
 
     // href for searching with the imdb-ID
-    node.href = 'http://trakt.tv/search/imdb?q=' + id;
+    node.href = 'http://trakt.tv/search/imdb?query=' + id;
 
     node.textContent = 'Search Trakt.tv';
     // node.setAttribute('target','_blank');
