@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         show link to trakt.tv (based on IMDB2Trakt from Arias)
-// @description  imdb.com
-// @version      1.0.1
+// @name         show link to trakt.tv
+// @description  imdb.com (inspired by IMDB2Trakt from Arias)
+// @version      1.0.2
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.imdb.com
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
-// @license      MIT
+// @license      Public Domain (Unlicense)
 //
 // @include      http://www.imdb.com/title/*
 // @include      https://www.imdb.com/title/*
@@ -25,7 +25,7 @@
         separator = document.createElement('span'),
         node = document.createElement('a'),
         // uggly way of getting imdb-ID
-        id = document.URL.substring(26,35);
+        id = document.URL.substring(26, 35);
 
     // add separator char
     separator.innerHTML = '&nbsp;-&nbsp;';
