@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         steamdb.info/sales
 // @description  filter irrelevant entries
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.steamdb.info
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
-// @license      MIT
+// @license      Public Domain (Unlicense)
 //
 // @include      https://steamdb.info/sales/*
 //
@@ -46,8 +46,8 @@
 
         // update badge
         var visiblecount = section.find('tr.app:visible').length;
-        section.find('.badge').text(
-            visiblecount
+        section.find('.pre-table-title>span').text(
+            visiblecount + (visiblecount > 1 ? ' Products' : ' Product')
         );
 
         if (visiblecount === 0) {
