@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         hide ads and premium
 // @description  kleinanzeigen.ebay.de
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
 // @namespace    https://github.com/solygen/userscripts
@@ -67,7 +67,7 @@
     // hide adds
     setTimeout(function () {
         // simply remove premium stuff
-        $('#srp_adsense-top, #srp_adsense-middle, #srp_adsense-bottom, #srchrslt-adtable-topads, .headerbox.t-border-yellow').remove();
+        $('#srp_adsense-top, #srp_adsense-middle, #srp_adsense-bottom, #srchrslt-adtable-topads, .headerbox.t-border-yellow, #home-gallery).remove();
 
         // re-arrange 'meine kleinanzeigen'
         if (!$('.managead-listitem-features').length) return;
