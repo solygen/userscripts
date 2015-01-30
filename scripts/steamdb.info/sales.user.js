@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         steamdb.info/sales
 // @description  filter irrelevant entries
-// @version      1.0.2
+// @version      1.0.3
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.steamdb.info
 // @namespace    https://github.com/solygen/userscripts
@@ -36,10 +36,11 @@
                 discount = row.find('td.price-discount, td.price-discount-minor'),
                 discountvalue = parseInt(discount.attr('data-sort')),
                 price = row.find('td.price-final'),
-                pricevalue = parseInt(price.attr('data-sort'));
+                pricevalue = parseInt(price.attr('data-sort')),
+                notHighest = row.find('.lowest-discount > b').length;
 
             // remove
-            if (scorevalue < 80 || pricevalue > 700 || discountvalue < 50) {
+            if (notHighest || scorevalue < 80 || pricevalue > 700 || discountvalue < 50) {
                 row.hide();
             }
         });
@@ -50,6 +51,10 @@
             visiblecount + (visiblecount > 1 ? ' products' : ' product')
         );
 
+        // sort by price not discount
+        $('.sort-header > img').parent().trigger('click')
+
+        // hide empty sections
         if (visiblecount === 0) {
             section.hide();
         } else {
