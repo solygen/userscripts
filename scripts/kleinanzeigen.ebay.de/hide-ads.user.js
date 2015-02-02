@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         hide ads and premium
 // @description  kleinanzeigen.ebay.de
-// @version      1.0.2
+// @version      1.0.3
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
 // @namespace    https://github.com/solygen/userscripts
@@ -38,7 +38,7 @@
                 });
 
             // auto extend
-            $('.my-manageads-adlist .managead-listitem-action-extend').trigger('click');
+            $('.managead-listitem-action-extend').trigger('click');
 
             // stats
             $.each(node.find('li'), function (i, node) {
