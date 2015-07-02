@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         deck view: different tweaks
 // @description  deckstats.net
-// @version      1.0.0
 // @grant        none
+// @version      1.0.1
 // @icon         http://www.google.com/s2/favicons?domain=www.deckstats.net
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 //
-// @include      http://deckstats.net/decks/*
+// @include      http://deckstats.net/*
 //
 // @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/deckstats.net/deck-view.user.js
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/deckstats.net/deck-view.user.js
@@ -21,7 +21,8 @@
 
     'use strict';
 
-    var RARE = 'rgb(196, 159, 39)',
+    var $ = $,
+        RARE = 'rgb(196, 159, 39)',
         UNCOMMON = 'rgb(119, 119, 119)',
         COMMON = 'rgb(0, 0, 0)',
         MYTHIC = 'rgb(132, 47, 7)',
@@ -50,10 +51,10 @@
         set: function () {
             //set banner link to list view
             var listview = $($('ul#user_menu a')[0]).attr('href');
-            if (listview)
+            if (listview) {
                 $($('#header_left a')).attr('href', listview);
+            }
         },
-
 
         //bigger card preview
         register: function () {
@@ -92,7 +93,7 @@
             //     tabcontent = $('#deck_tabs-spoiler').clone();
             // //set tab link
             // tab.find('a')
-            //     .attr('href', '#deck_tabs-proxies')
+            //     .attr('href', '#deck_tabs-#ies')
             //     .text('Proxies (' + data.proxies.length +  ')');
 
             // $(tab.find('a'))
@@ -128,7 +129,7 @@
                 $('.custom').remove();
                 var node = $($('div.ui-widget')[1]).clone();
                 //set content
-                $(node.find('p')[0]).empty()
+                $(node).empty()
                                     .append(data.proxies.join('<br>'));
                 //remove title and add bottom margin
                 node.attr('title', '')
@@ -151,16 +152,21 @@
 
         //update rarity
         rarity: function () {
-            if (current.color === RARE)
+            if (current.color === RARE) {
                 data.rarity.rare.push(current.num + ' ' + current.name);
-            if (current.color === UNCOMMON)
+            }
+            if (current.color === UNCOMMON) {
                 data.rarity.uncommon.push(current.num + ' ' + current.name);
-            if (current.color === COMMON)
+            }
+            if (current.color === COMMON) {
                 data.rarity.common.push(current.num + ' ' + current.name);
-            if (current.color === MYTHIC)
+            }
+            if (current.color === MYTHIC) {
                 data.rarity.mythic.push(current.num + ' ' + current.name);
-            if (current.color === BASIC)
+            }
+            if (current.color === BASIC) {
                 data.rarity.basic.push(current.num + ' ' + current.name);
+            }
         },
 
         //reorder edition column
@@ -180,15 +186,16 @@
         identify: function () {
             var comment = current.comment;
             if (comment && (comment.length === 1 || comment === 'proxy')) {
-                $(current.row.find('.hbtronix_icon')[0])
+                $(current.row.find('.deck_card_comment')[0])
                     .prop('src', 'http://i.hbtronix.de/picture_empty.png')
                     .css('height', '11px')
                     .css('width', '11px');
 
-                if (comment.length === 1)
+                if (comment.length === 1) {
                     data.proxies.push(comment + ' ' + current.name);
-                else
+                } else {
                     data.proxies.push(current.num + ' ' + current.name);
+                }
             }
         },
 
@@ -206,7 +213,7 @@
                     price: $(row.find('.card_price')[0]).text().trim().replace('\u20AC', ''),
                     num: $(row.find('.card_amount')[0]).text().trim(),
                     name: $(row.find('a')[0]).text().trim(),
-                    comment: $(row.find('.hbtronix_icon')[0]).attr('title'),
+                    comment: $(row.find('.deck_card_comment')[0]).attr('title'),
                     color: $($(row.find('.info_link'))[0]).find('span').css('color')
                 };
                 current.each = (current.price / current.num).toFixed(2);
@@ -226,4 +233,3 @@
 
     };
 })().run();
-

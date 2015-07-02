@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         steamdb.info/sales
 // @description  filter irrelevant entries
-// @version      1.0.3
+// @version      1.0.4
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.steamdb.info
 // @namespace    https://github.com/solygen/userscripts
@@ -52,7 +52,7 @@
         );
 
         // sort by price not discount
-        $('.sort-header > img').parent().trigger('click')
+        $('.sort-header > img').parent().trigger('click');
 
         // hide empty sections
         if (visiblecount === 0) {
