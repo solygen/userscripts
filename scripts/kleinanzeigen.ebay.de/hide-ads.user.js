@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         hide ads and premium
 // @description  kleinanzeigen.ebay.de
-// @version      1.0.3
+// @version      1.0.4
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
 //
-// @include      http://kleinanzeigen.ebay.de/*
+// @include      http://www.ebay-kleinanzeigen.de/*
 
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 //

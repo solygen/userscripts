@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         listimage
 // @description  kleinanzeigen.ebay.de
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
 //
-// @include      http://kleinanzeigen.ebay.de/anzeigen/*
+// @include      http://www.ebay-kleinanzeigen.de/anzeigen/*
 //
 // @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/kleinanzeigen.ebay.de/listimage.user.js
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/kleinanzeigen.ebay.de/listimage.user.js

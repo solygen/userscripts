@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         use relative times (detail, list)
 // @description  kleinanzeigen.ebay.de
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
 //
-// @include      http://kleinanzeigen.ebay.de/anzeigen/*
+// @include      http://www.ebay-kleinanzeigen.de/anzeigen/*
 
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @require      http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment-with-locales.min.js
