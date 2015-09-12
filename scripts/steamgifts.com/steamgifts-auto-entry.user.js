@@ -34,6 +34,8 @@ var pointsavailable=0;
 var possibleentries=[];
 var timeout=5*60*1000;
 var enabled=false;
+var lookahead = 2;
+var stopPropagation = true;
 
 {
     var s=$.localStorage;
@@ -100,6 +102,9 @@ function doentry(resp) {
 function startnextentry() {
     if(possibleentries.length>0) {
         for(var ei=0; ei<possibleentries.length; ei++) {
+            // break when not enough points
+            if (stopPropagation && parseInt(possibleentries[ei].points)>parseInt(pointsavailable)) break;
+
             if((possibleentries[ei].force==true) && (pointsavailable-possibleentries[ei].points)>=minpoints) {
 
                 if($('#hiddeniframe').length==0) {
@@ -244,7 +249,7 @@ function backgroundpageload(pagenum) {
             pagenum=0;
         }
 
-        if(pagenum<10) {
+        if(pagenum<lookahead) {
             startpagerequest(pagenum+1);
             return;
         }
