@@ -75,7 +75,7 @@ function doentry(resp) {
     var submitted=false;
     $('#hiddeniframe').unbind('load');
     if($('#hiddeniframe').contents().find('.sidebar .sidebar__error').length==0 && $('#hiddeniframe').contents().find('.sidebar form').length>0 && $('#hiddeniframe').contents().find('.sidebar form').html().indexOf('Enter Giveaway')>=0) {
-        log('Entering giveaway');
+        //log('Entering giveaway');
         $('#hiddeniframe').contents().find('.sidebar .sidebar__entry-insert').click();
         submitted=true;
     }
@@ -184,7 +184,7 @@ function backgroundpageload(pagenum) {
                         for(var gi=0; gi<gamelist.length && gameidx<0; gi++) {
                             if(RegExp(gamelist[gi].name,"i").test(name)==true) {
                                 gameidx=gi;
-                                log('Matched regex');
+                                //log('Matched regex');
                             }
                         }
                         if(gameidx<0) {
@@ -219,7 +219,7 @@ function backgroundpageload(pagenum) {
                             possibleentries[possibleentries.length-1].name=name;
                             possibleentries[possibleentries.length-1].points=arr[1];
                             possibleentries[possibleentries.length-1].force=(pagenum=='wishlist' || pagenum=='group');
-                            log('Adding possible entry '+possibleentries[possibleentries.length-1].url+'  points='+possibleentries[possibleentries.length-1].points+'  '+possibleentries.length);
+                            //log('Adding possible entry '+possibleentries[possibleentries.length-1].url+'  points='+possibleentries[possibleentries.length-1].points+'  '+possibleentries.length);
                         }
                     }
                 }
