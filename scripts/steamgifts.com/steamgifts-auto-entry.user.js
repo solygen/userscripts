@@ -32,7 +32,7 @@ var sitepattern=new RegExp('https?://.*steamgifts.com');
 var siteurl=sitepattern.exec(document.URL.toString());
 var pointsavailable=0;
 var possibleentries=[];
-var timeout=600000;
+var timeout=5*60*1000;
 var enabled=false;
 
 {
