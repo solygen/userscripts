@@ -7,16 +7,14 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: pkg,
         //include plugin configs
-        jshint:  require('./tasks/jshint.js'),
-        jscs:  require('./tasks/jscs.js'),
+        eslint:  require('./tasks/eslint.js'),
         shell: require('./tasks/shell.js')
     });
 
     // load plugins
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-jscs');
+    grunt.loadNpmTasks('grunt-eslint');
     grunt.loadNpmTasks('grunt-shell');
 
     // define tasks
-    grunt.registerTask('default', ['jshint', 'shell:tree']);
+    grunt.registerTask('default', ['eslint', 'shell:tree']);
 };

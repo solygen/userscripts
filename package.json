@@ -1,14 +1,14 @@
 {
   "name": "userscripts",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/solygen/userscripts.git"
+    "type": "git",
+    "url": "https://github.com/solygen/userscripts.git"
   },
   "version": "0.1.1",
   "devDependencies": {
-      "grunt": "~0.4",
-      "grunt-contrib-jshint": "~0.10",
-      "grunt-jscs": "1.2.0",
-      "grunt-shell": "~1.1"
+    "eslint-config-solygen": "file:../eslint-config-solygen",
+    "grunt": "~0.4",
+    "grunt-eslint": "17.3.1",
+    "grunt-shell": "~1.1"
   }
 }
