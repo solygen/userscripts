@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bankingportal german sparkasse
 // @description  filter 'umsatzliste' by substring in 'verwendungszweck'
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.sparkasse.de
 // @namespace    https://github.com/solygen/userscripts
@@ -41,7 +41,7 @@
     block.insertBefore('.table_umsatzabfrage');
 
     // filter rows
-    function filter (val, index, row) {
+    function filter(val, index, row) {
         var text = $($(row).find('td')[2]).contents().text().replace(/\s/g, '').toLowerCase();
         if (text.indexOf(val) < 0) {
             $(row).hide();

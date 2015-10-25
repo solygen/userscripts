@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         cardview: link to mkm/mcm when clicking on card image
 // @description  magiccards.info
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://magiccards.info/images/mini.gif
 // @namespace    https://github.com/solygen/userscripts
@@ -39,11 +39,11 @@
         //     window.prompt ('Copy to clipboard: Ctrl+C, Enter', name);
         // },
         enter = function () {
-                this.setAttribute('style', 'opacity: 0.90; border: 1px solid black');
-            },
+            this.setAttribute('style', 'opacity: 0.90; border: 1px solid black');
+        },
         leave = function () {
-                this.setAttribute('style', 'opacity: 1; border: 1px solid black');
-            };
+            this.setAttribute('style', 'opacity: 1; border: 1px solid black');
+        };
 
     //get image
     images = getImages();

@@ -3,12 +3,15 @@
 // @namespace   steamgifts_autoentry
 // @description Automatically enters giveaways on steamgifts.com
 // @include     http://www.steamgifts.com/
-// @version     14
+// @version     14.0.1
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.4.min.js
 // @require     http://code.jquery.com/ui/1.11.4/jquery-ui.min.js
+// @require     https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js
+// @require     https://raw.githubusercontent.com/gr2m/moment-parseformat/gh-pages/moment.parseFormat.js
 // ==/UserScript==
 
+/* eslint-disable */
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 /* jQuery Storage API Plugin 1.7.4 https://github.com/julien-maurel/jQuery-Storage-API */
@@ -26,6 +29,7 @@ jQuery.fn.center = function () {
 var gamelist=[];
 var minpoints=100;
 var enterwishlist=false;
+var enterads=false;
 var entergroup=false;
 var checktimer;
 var sitepattern=new RegExp('https?://.*steamgifts.com');
@@ -34,8 +38,7 @@ var pointsavailable=0;
 var possibleentries=[];
 var timeout=5*60*1000;
 var enabled=false;
-var lookahead = 2;
-var stopPropagation = true;
+
 
 {
     var s=$.localStorage;
@@ -55,6 +58,10 @@ var stopPropagation = true;
         if($.isNumeric(minpoints)==false) {
             minpoints=100;
         }
+    }
+
+    if(s.isSet('enterads') && s.get('enterads')!="undefined") {
+        enterwishlist=s.get('enterads');
     }
 
     if(s.isSet('enterwishlist') && s.get('enterwishlist')!="undefined") {
@@ -100,12 +107,25 @@ function doentry(resp) {
 }
 
 function startnextentry() {
+
     if(possibleentries.length>0) {
         for(var ei=0; ei<possibleentries.length; ei++) {
-            // break when not enough points
-            if (stopPropagation && parseInt(possibleentries[ei].points)>parseInt(pointsavailable)) break;
 
-            if((possibleentries[ei].force==true) && (pointsavailable-possibleentries[ei].points)>=minpoints) {
+            if((possibleentries[ei].force==true)/* && (pointsavailable-possibleentries[ei].points)>=minpoints*/) {
+                // break when not ending today
+                //debugger;
+                var $root = $('a[href="' + possibleentries[ei].url + '"]').closest('.giveaway__row-inner-wrap');
+                /*
+
+                var time = $($root.find('span')[2]).attr('title') || '';
+                if (time.indexOf('Today') < 0) return;
+                */
+
+                // break when not enough points
+                if (parseInt(possibleentries[ei].points)>parseInt(pointsavailable)) break;
+
+                // go!
+                console.log(possibleentries[ei].name, pointsavailable, possibleentries[ei].points);
 
                 if($('#hiddeniframe').length==0) {
                     $('.footer__outer-wrap').append('<iframe id="hiddeniframe"></iframe>');
@@ -114,14 +134,20 @@ function startnextentry() {
                 $('#hiddeniframe').load(doentry);
                 $('#hiddeniframe').attr('src',siteurl+possibleentries[ei].url);
 
+                $root.addClass('is-faded');
                 pointsavailable-=possibleentries[ei].points;
+                $('.nav__points').text(pointsavailable);
                 possibleentries.splice(ei,1);
                 return;
             }
         }
         for(var ti=0; ti<gamelist.length; ti++) {
             for(var ei=0; ei<possibleentries.length; ei++) {
-                var rematch=new RegExp(gamelist[ti].name,"i").test(possibleentries[ei].name);
+                var rematch=true;//new RegExp(gamelist[ti].name,"i").test(possibleentries[ei].name);
+
+                // break when not enough points
+                if (parseInt(possibleentries[ei].points)>parseInt(pointsavailable)) break;
+
                 if((gamelist[ti].name==possibleentries[ei].name || rematch==true) && (pointsavailable-possibleentries[ei].points)>=minpoints) {
 
                     if($('#hiddeniframe').length==0) {
@@ -163,8 +189,14 @@ function startpagerequest(pagenum) {
 
 function backgroundpageload(pagenum) {
     return function(resp) {
-
+        // .pinned-giveaways__outer-wrap
         entries=$(resp).find('.giveaway__row-outer-wrap');
+
+        if (!enterads) {
+            entries = entries.filter(function (index, node) {
+                return !node.closest('.pinned-giveaways__inner-wrap');
+            });
+        }
 
         if(typeof(entries)!="undefined" && typeof(entries.length)!="undefined") {
             $(entries).each(function() {
@@ -185,6 +217,7 @@ function backgroundpageload(pagenum) {
                     //var name=$(this).find('.title').find('a[href^="/giveaway/"]').text();
                     var name=$(this).find('.giveaway__heading__name').text();
                     var gameidx=gamelist.map(function(el) { return el.name; }).indexOf(name);
+
                     if(gameidx<0 && levelok==true) {
                         for(var gi=0; gi<gamelist.length && gameidx<0; gi++) {
                             if(RegExp(gamelist[gi].name,"i").test(name)==true) {
@@ -193,7 +226,7 @@ function backgroundpageload(pagenum) {
                             }
                         }
                         if(gameidx<0) {
-                            ok=false;
+                            //ok=false;
                         }
                     }
                     var pointsregex=new RegExp("\\((\\d+)P\\)");
@@ -202,12 +235,13 @@ function backgroundpageload(pagenum) {
                     // remove , from string because it's used as a thousand separator
                     var earr=entriesregex.exec($(this).find('.giveaway__links a').html().replace(',',''));
 
+                    /**
                     if(ok==true && earr!=null && earr.length==2) {
                         if(gamelist[gameidx].maxentries!="nothing" && gamelist[gameidx].maxentries!=-1 && parseInt(gamelist[gameidx].maxentries)<parseInt(earr[1])) {
                             ok=false;
                             log('Too many entries for '+$(this).find('a[href^="/giveaway/"]').attr('href'));
                         }
-                    }
+                    }*/
 
                     if(levelok==true && (ok==true || pagenum=='wishlist' || pagenum=='group')) {
                         var thisurl=$(this).find('a[href^="/giveaway/"]').attr('href');
@@ -220,10 +254,11 @@ function backgroundpageload(pagenum) {
                         if(haveurl==false) {
                             possibleentries.length+=1;
                             possibleentries[possibleentries.length-1]={};
+                            possibleentries[possibleentries.length-1].node=$(this);
                             possibleentries[possibleentries.length-1].url=thisurl;
                             possibleentries[possibleentries.length-1].name=name;
                             possibleentries[possibleentries.length-1].points=arr[1];
-                            possibleentries[possibleentries.length-1].force=(pagenum=='wishlist' || pagenum=='group');
+                            possibleentries[possibleentries.length-1].force=true;//(pagenum=='wishlist' || pagenum=='group');
                             //log('Adding possible entry '+possibleentries[possibleentries.length-1].url+'  points='+possibleentries[possibleentries.length-1].points+'  '+possibleentries.length);
                         }
                     }
@@ -249,12 +284,12 @@ function backgroundpageload(pagenum) {
             pagenum=0;
         }
 
-        if(pagenum<lookahead) {
+        if(pagenum<2) {
             startpagerequest(pagenum+1);
             return;
         }
 
-        log('Points Available='+pointsavailable);
+        log('Points Available: '+pointsavailable);
         startnextentry();
 
     }
@@ -286,6 +321,7 @@ function loadfailure(pagenum) {
 }
 
 function startupdate() {
+    console.log('---');
     pointsavailable=0;
     possibleentries=[];
     if(enterwishlist==true) {
@@ -380,6 +416,7 @@ function createsettingsdiv() {
 
     outerdiv.append('Min Points <input type="text" id="autoentryminpoints" pattern="\\d+" style="width:30px; padding:0px;" title="Giveaways will only be entered as long as your points available will remain at or above this number.  This allows you to have a spare pool of points to manually enter giveaways.">');
     outerdiv.append('<br />');
+    outerdiv.append('<input type="checkbox" name="autoentryenterads" id="autoentryenterads" style="width:15px;vertical-align:top;">Enter any ads giveaways<br />');
     outerdiv.append('<input type="checkbox" name="autoentryenterwishlist" id="autoentryenterwishlist" style="width:15px;vertical-align:top;">Enter any wishlist giveaways<br />');
     outerdiv.append('<input type="checkbox" name="autoentryentergroup" id="autoentryentergroup" style="width:15px;vertical-align:top;">Enter any group giveaways<br />');
     var center=$('<center></center>');
@@ -400,6 +437,8 @@ function createsettingsdiv() {
             minpoints=$('#autoentryminpoints').val();
             storage.set('minpoints',minpoints);
         }
+        enterads=$('#autoentryenterads').prop("checked");
+        storage.set('enterads',enterads);
         enterwishlist=$('#autoentryenterwishlist').prop("checked");
         storage.set('enterwishlist',enterwishlist);
         entergroup=$('#autoentryentergroup').prop("checked");
@@ -481,6 +520,7 @@ function createbackuprestorediv() {
             minpoints=settingsobj.minpoints;
         }
         if(settingsobj.version>=2) {
+            enterads=settingsobj.enterads;
             enterwishlist=settingsobj.enterwishlist;
             entergroup=settingsobj.entergroup;
         }
@@ -542,7 +582,7 @@ $(document).ready(function() {
                     </a>\
                 </div>\
             </div>\
-            <span class="nav__button nav__button--is-dropdown" id="autoentrymainbutton">Auto Entry <i class="icon-red fa fa-fw fa-minus"></i></span>\
+            <span class="nav__button nav__button--is-dropdown" id="autoentrymainbutton"><i class="icon-red fa fa-fw fa-minus"></i></span>\
             <div class="nav__button nav__button--is-dropdown-arrow">\
                 <i class="fa fa-angle-down"></i>\
             </div>\
@@ -611,6 +651,8 @@ $(document).ready(function() {
             ul.sortable();
             ul.disableSelection();
             $('#autoentryminpoints').val(minpoints);
+            $('#autoentryenterads').prop("checked",enterads);
+
             $('#autoentryenterwishlist').prop("checked",enterwishlist);
             $('#autoentryentergroup').prop("checked",entergroup);
             return false;
@@ -624,6 +666,7 @@ $(document).ready(function() {
             savedsettings.version=2;
             savedsettings.gamelist=gamelist;
             savedsettings.minpoints=minpoints;
+            savedsettings.enterads=enterads;
             savedsettings.enterwishlist=enterwishlist;
             savedsettings.entergroup=entergroup;
             $('#autoentrybackupjson').val(JSON.stringify(savedsettings));
@@ -639,3 +682,4 @@ $(document).ready(function() {
     };
 
 });
+/* eslint-enable */

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         view as list: just show plain text
 // @description  magiccards.info
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://magiccards.info/images/mini.gif
 // @namespace    https://github.com/solygen/userscripts
@@ -27,5 +27,5 @@
         list.push(node.textContent);
         console.log(node.textContent);
     });
-    table.innerHTML = list.join("<br>");
+    table.innerHTML = list.join('<br>');
 })();

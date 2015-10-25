@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         slimkicker.com: hide some ui elements
 // @description  slimkicker.com
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.slimkicker.com/img/badges/no-eating-after-dinner.png
 // @namespace    https://github.com/solygen/userscripts
@@ -21,15 +21,15 @@
     'use strict';
 
     $($.find('#tabNutrition')).remove();
-	$($.find('#tabForums')).remove();
-	$($.find('#tabFriends')).remove();
-	$($.find('#tabBlog')).remove();
+    $($.find('#tabForums')).remove();
+    $($.find('#tabFriends')).remove();
+    $($.find('#tabBlog')).remove();
 
-	$($.find('.box.menu')).remove();
-	$($.find('#banner')).remove();
-	$($.find('#footer')).remove();
-	$($.find('#header')).addClass('top');
-	//$($($.find('#sidebar')).find('img')).remove();
+    $($.find('.box.menu')).remove();
+    $($.find('#banner')).remove();
+    $($.find('#footer')).remove();
+    $($.find('#header')).addClass('top');
+    //$($($.find('#sidebar')).find('img')).remove();
 
-	$($.find('#tabs2-bt')).click();
+    $($.find('#tabs2-bt')).click();
 })();

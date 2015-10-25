@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reports with multiple tables: remove empty rows and put total tabel to top
 // @description  bugs.open-xchange.com
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.bugzilla.org
 // @namespace    https://github.com/solygen/userscripts
@@ -28,8 +28,13 @@
         for (var i = $rows.length - 1; i >= 0; i--) {
             var $row = $($rows[i]),
                 links = !!($row.find('a').length);
-            if (!links)
+            if (!links) {
                 $row.remove();
+            }
+        }
+
+        function transform(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         }
 
         //bigger font size and map email address to name
@@ -39,7 +44,7 @@
             if (element.textContent.indexOf('@open-xchange.com') !== -1) {
                 element.textContent = element.textContent.replace('@open-xchange.com', '');
                 element.textContent = element.textContent.replace('.', ' ');
-                element.textContent = element.textContent.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+                element.textContent = element.textContent.replace(/\w\S*/g, transform);
             }
         });
 

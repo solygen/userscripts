@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         hide already stared trending repos
 // @description  github.com
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.github.com
 // @namespace    https://github.com/solygen/userscripts
@@ -25,7 +25,8 @@
 
     list.each(function (index, item) {
         repo = $(item);
-        if (repo.find('.starring-container.on').length)
+        if (repo.find('.starring-container.on').length) {
             repo.remove();
-        });
+        }
+    });
 })();

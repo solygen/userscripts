@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         marks external transfers
 // @description  transfermarkt.de
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.transfermarkt.de
 // @namespace    https://github.com/solygen/userscripts
@@ -21,7 +21,7 @@
     'use strict';
 
     var nodelist = $('.spielprofil_tooltip'),
-        list = Array.prototype.slice.call(nodelist,0),
+        list = Array.prototype.slice.call(nodelist, 0),
         hash = {};
 
     list.forEach(function (node) {

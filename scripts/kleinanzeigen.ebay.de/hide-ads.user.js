@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         hide ads and premium
 // @description  kleinanzeigen.ebay.de
-// @version      1.0.4
+// @version      1.0.5
 // @grant        none
-// @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
+// @icon         http://www.google.com/s2/favicons?domain=www.ebay-kleinanzeigen.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -22,7 +22,7 @@
 
     'use strict';
 
-    function rearrange () {
+    function rearrange() {
         var itemnodes = $('.managead-listitem-features');
 
         $.each(itemnodes, function (i, node) {
@@ -57,8 +57,8 @@
                     .css('display', 'block');
 
                 // do not show '0' values
-                if (label.text() === '0' || label.text() === '')
-                    return;
+                if (label.text() === '0' || label.text() === '') return;
+
                 node.append(img, label);
             });
         });

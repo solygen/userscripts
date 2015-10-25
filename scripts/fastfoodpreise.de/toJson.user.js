@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         fastfoodpreise: write prices to console as json
 // @description  fastfoodpreise.de
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.fastfoodpreise.de
 // @namespace    https://github.com/solygen/userscripts
@@ -21,7 +21,7 @@
     'use strict';
 
     var list = document.querySelectorAll('tr'),
-        data = {}, last;
+        data = {}, last, size, key;
 
     [].forEach.call(list, function (row) {
         if (row.querySelector('.size') && row.querySelector('.price')) {

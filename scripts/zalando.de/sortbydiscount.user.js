@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         sort by discount
 // @description  zalando.de
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.zalando.de
 // @namespace    https://github.com/solygen/userscripts
@@ -29,21 +29,21 @@
             nodes = parent.first().children();
 
         nodes.sort(function (a, b) {
-            var vala = parseInt($(a).find('.salePercentFlag').text().replace('%', '')),
-                valb = parseInt($(b).find('.salePercentFlag').text().replace('%', ''));
-            if (vala < valb)
+            var vala = parseInt($(a).find('.salePercentFlag').text().replace('%', ''), 10),
+                valb = parseInt($(b).find('.salePercentFlag').text().replace('%', ''), 10);
+            if (vala < valb) {
                 return -1;
-            else if (vala > valb)
+            } else if (vala > valb) {
                 return 1;
-            else
-                return 0;
+            }
+            return 0;
         });
 
         parent.empty();
         parent.append(nodes);
 
     }
-    if (container.length)
+    if (container.length) {
         container.parent().append(
             $('<label>')
                 .css('padding-left', '8px')
@@ -53,5 +53,6 @@
                         .click(sortByDiscount)
                 )
             );
+    }
 
 })();

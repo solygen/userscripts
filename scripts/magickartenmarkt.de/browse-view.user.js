@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         browse view: cleaner view by hiding duplicate name information
 // @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#browse-viewuserjs
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         https://www.magickartenmarkt.de/Products/Singles/Magic+2010/img/c0a10b062a8c3b48a5c29b779b3ac51e/static/misc/favicon-96x96.png
 // @namespace    https://github.com/solygen/userscripts
@@ -34,19 +34,20 @@
         tolerance = 0.1,
         pricelevel = [],
         lastname,
-        FAVORITE = ' \u2605'; //' \u2665',
+        FAVORITE = ' \u2605', //' \u2665',
         NOFAVORITE = ' \u2606'; //'\u2661';
 
 
     //sort cards (name, price)
     (function sortCards() {
-        $rows.sort(function(a, b){
+        $rows.sort(function (a, b) {
             function getKey(node) {
                 var price = parseFloat($($(node).children()[13]).text().trim().replace(',', '.').replace('€', ''), 10),
                     $node = $(node);
                 //consider playset
-                if ($($(node).children()[9]).find('img').size())
+                if ($($(node).children()[9]).find('img').size()) {
                     price = price / 4;
+                }
                 //hack: +1000 to get right sort order (e.g. 8, 12, 102)
                 return $($(node).children()[2]).find('a').text() + price + 1000;
             }
@@ -59,7 +60,7 @@
     //apply order
     (function applyOrder() {
         $table.empty();
-        $.each($rows, function (index, row){
+        $.each($rows, function (index, row) {
             $table.append(row);
         });
     }());
@@ -122,11 +123,11 @@
             name = $('.H1_PageTitle').text().split(' ')[2],
             sum = 0;
         //sum
-        $.each(pricelevel, function() {
+        $.each(pricelevel, function () {
             sum += parseFloat(this) || 0;
         });
         //average
-        level = Math.round(sum/pricelevel.length*100)/100;
+        level = Math.round(sum / pricelevel.length * 100) / 100;
         //add level to dom/local storage
         $('.H1_PageTitle').text($('.H1_PageTitle').text() + ' (' + level + ')');
         level = localStorage.setItem('seller:' + name, level);
@@ -146,8 +147,9 @@
             salesprice = getSalePrice($row);
 
         //consider playset
-        if ($($row.children()[10]).find('img').size())
+        if ($($row.children()[10]).find('img').size()) {
             salesprice = salesprice / 4;
+        }
 
         //average price (sold)
         addCell($row);

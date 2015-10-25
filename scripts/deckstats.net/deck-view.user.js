@@ -2,7 +2,7 @@
 // @name         deck view: different tweaks
 // @description  deckstats.net
 // @grant        none
-// @version      1.0.1
+// @version      1.0.2
 // @icon         http://www.google.com/s2/favicons?domain=www.deckstats.net
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -58,19 +58,20 @@
 
         //bigger card preview
         register: function () {
-            var id = setInterval(function () {
-                    $('#kartenOverlay')
-                        .css('border', '0px')
-                        .css('width', 'auto');
-                    $('#kartenOverlayBild')
-                        .css('height', '380px')
-                        .css('width', '266px');
-                    $('#kartenOverlayContent')
-                        .css('display', 'none');
-                    if ($('#kartenOverlay').length) {
-                        clearInterval(id);
-                    }
-                }, 1000);
+            function adjust() {
+                $('#kartenOverlay')
+                    .css('border', '0px')
+                    .css('width', 'auto');
+                $('#kartenOverlayBild')
+                    .css('height', '380px')
+                    .css('width', '266px');
+                $('#kartenOverlayContent')
+                    .css('display', 'none');
+                if ($('#kartenOverlay').length) {
+                    clearInterval(id);
+                }
+            }
+            var id = setInterval(adjust, 1000);
         },
 
         //replace link

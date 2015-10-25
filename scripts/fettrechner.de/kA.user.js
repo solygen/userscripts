@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         hide 'k. A.' content
 // @description  fettrechner.de
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.fettrechner.de
 // @namespace    https://github.com/solygen/userscripts
@@ -21,7 +21,7 @@
     'use strict';
 
     var nodeList = document.body.querySelectorAll('.zahl'),
-        list = Array.prototype.slice.call(nodeList,0);
+        list = Array.prototype.slice.call(nodeList, 0);
 
     list.forEach(function (node) {
         node.textContent = node.textContent.search('A.') > -1 ? '' : node.textContent;

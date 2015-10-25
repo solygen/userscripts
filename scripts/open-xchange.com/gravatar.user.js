@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bugzilla Gravatar
 // @description  bugzilla
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.bugzilla.org
 // @namespace    https://github.com/solygen/userscripts
@@ -27,9 +27,9 @@
 
     var md5cached = function (str) {
         var hash;
-        if (isBookmarklet)
+        if (isBookmarklet) {
             hash = md5(str);
-        else {
+        } else {
             /* jshint ignore:start */
             hash = GM_getValue(str);
             /* jshint ignore:end */
@@ -43,7 +43,7 @@
         return hash;
     };
 
-    var addGravatar = function addGravatar(el) {
+    var addGravatar = function (el) {
         if (typeof el === 'string') {
             el = document.getElementById(el);
         }
@@ -59,16 +59,16 @@
         el.innerHTML = '<img src="' + grav_url + '" style="border: none; vertical-align: middle"/> ' + el.innerHTML;
     };
 
-    var doAll = function doAll() {
+    var doAll = function () {
         try {
             var list = document.getElementsByTagName('a'),
-            len = list.length,
-            re = /^mailto:.*@/,
-            el,
-            i;
+                len = list.length,
+                re = /^mailto:.*@/,
+                el,
+                i;
             for (i = 0; i < len; i++) {
                 el = list[i];
-                /* jshint -W083 */
+                /* eslint-disable */
                 if (re.test(el.href)) {
                     (function () {
                         var local_el = el;
@@ -77,14 +77,15 @@
                             }, 10);
                     })();
                 }
-                /* jshint +W083 */
+                 /* eslint-enable */
             }
         } catch (e) {
-            alert('debug: ' + e);
+            console.error(e);
         }
     };
-    if (isBookmarklet)
+    if (isBookmarklet) {
         doAll();
-    else
+    } else {
         window.addEventListener('load', doAll, false);
+    }
 })();

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         steamdb.info/sales
 // @description  filter irrelevant entries
-// @version      1.0.4
+// @version      1.0.5
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.steamdb.info
 // @namespace    https://github.com/solygen/userscripts
@@ -32,11 +32,11 @@
             row = $(row);
 
             var score = $(row.find('td').last()),
-                scorevalue = parseInt((score.attr('data-sort') || '0').replace('%','')),
+                scorevalue = parseInt((score.attr('data-sort') || '0').replace('%', ''), 10),
                 discount = row.find('td.price-discount, td.price-discount-minor'),
-                discountvalue = parseInt(discount.attr('data-sort')),
+                discountvalue = parseInt(discount.attr('data-sort'), 10),
                 price = row.find('td.price-final'),
-                pricevalue = parseInt(price.attr('data-sort')),
+                pricevalue = parseInt(price.attr('data-sort'), 10),
                 notHighest = row.find('.lowest-discount > b').length;
 
             // remove
@@ -63,4 +63,4 @@
 
     });
 
-}) ();
+})();

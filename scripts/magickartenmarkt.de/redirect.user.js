@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         redirect: skip meta card page / skip search result page
 // @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#redirectuserjs
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         https://www.magickartenmarkt.de/Products/Singles/Magic+2010/img/c0a10b062a8c3b48a5c29b779b3ac51e/static/misc/favicon-96x96.png
 // @namespace    https://github.com/solygen/userscripts
@@ -25,11 +25,12 @@
 (function () {
 
     'use strict';
-    if ($('.expansionIcon').length)
+    if ($('.expansionIcon').length) {
+
         //metalink
         document.location = $('.expansionIcon').first().parent().attr('href');
             //$($('.standard_content').find('a')[1]).attr('href');
-    else if ($('.SearchTable').length) {
+    } else if ($('.SearchTable').length) {
 
         //search result
         var list = $('.SearchTable tbody tr'),
@@ -43,8 +44,9 @@
         }
 
         //redirect if only one card is found
-        if (Object.keys(hash).length === 1)
+        if (Object.keys(hash).length === 1) {
             document.location = $($('.SearchTable').find('a')[1]).attr('href');
+        }
     }
 
 })();

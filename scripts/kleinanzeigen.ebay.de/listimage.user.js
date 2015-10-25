@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         listimage
 // @description  kleinanzeigen.ebay.de
-// @version      1.0.1
+// @version      1.0.2
 // @grant        none
-// @icon         http://www.google.com/s2/favicons?domain=kleinanzeigen.ebay.de
+// @icon         http://www.google.com/s2/favicons?domain=www.ebay-kleinanzeigen.de
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
 // @license      MIT
@@ -30,7 +30,7 @@
             if (count !== imagelist.length) {
 
                 nodelist = $('#srchrslt-adtable .ad-listitem-image a:not(".placeholder-image")');
-                list = Array.prototype.slice.call(nodelist,0);
+                list = Array.prototype.slice.call(nodelist, 0);
 
                 list.forEach(function (node) {
                     node = $(node);
@@ -44,7 +44,7 @@
                         //get full size url
                         url = url.replace('_9.', '_3.')
                                  .replace('(', '');
-                        link = "url(" + url + ")";
+                        link = 'url(' + url + ')';
 
                         //change style
                         node.css({
@@ -61,8 +61,9 @@
                 });
                 count = imagelist.length;
                 //done
-                if (count === list.count)
+                if (count === list.count) {
                     clearInterval(id);
+                }
             }
         }, 500);
 
