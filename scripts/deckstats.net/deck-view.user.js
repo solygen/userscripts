@@ -2,7 +2,7 @@
 // @name         deck view: different tweaks
 // @description  deckstats.net
 // @grant        none
-// @version      1.0.2
+// @version      1.0.3
 // @icon         http://www.google.com/s2/favicons?domain=www.deckstats.net
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -21,7 +21,7 @@
 
     'use strict';
 
-    var $ = $,
+    var $ = $ || jQuery,
         RARE = 'rgb(196, 159, 39)',
         UNCOMMON = 'rgb(119, 119, 119)',
         COMMON = 'rgb(0, 0, 0)',
