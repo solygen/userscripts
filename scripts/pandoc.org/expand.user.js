@@ -27,7 +27,7 @@
     $('.container').addClass('container-fluid').removeClass('container');
 
     // 3.000 -> 100.000
-    $('textarea').attr('maxlength', '100000')
+    $('textarea').attr('maxlength', '100000');
 
     // add autosize feature
     autosize($('textarea'));
