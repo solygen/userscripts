@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         wants: add prices
 // @description  https://github.com/solygen/userscripts/blob/master/doc/magickartenmarkt.de.md#wants-viewuserjs
-// @version      1.0.1
+// @version      1.0.2
 // @grant        none
 // @icon         https://www.magickartenmarkt.de/Products/Singles/Magic+2010/img/c0a10b062a8c3b48a5c29b779b3ac51e/static/misc/favicon-96x96.png
 // @namespace    https://github.com/solygen/userscripts
@@ -25,36 +25,30 @@
 
     'use strict';
 
-    var list = $($.find('.col_2')).find('a'),
+    var list = $($.find('.wantsTable tr td:nth-child(3)')).find('a'),
         FAVORITE = ' \u2605',
         NOFAVORITE = ''; //'\u2606';
 
-    //replace start price with average price sold
+    // adjust header (keep it sortable)
+    $('.wantsTable th:nth-child(13)').find('span').text('∅')
+
+    // replace start price with average price sold
     $.each(list, function (index, value) {
         var $elem = $(value),
             $row = $($elem.parent().parent()),
             name = $elem.text().trim(),
             price = localStorage.getItem(name) || '';
-
-        $row.find('.col_12')
-            .text(price ? (price + '  €')
+        $row.find('td:nth-child(13)')
+            .text(price ? (parseFloat(price).toFixed(2) + '  €')
             .replace('.', ',') : '');
     });
 
-    //adjust header (keep it sortable)
-    var header = $('.headerCell_10')
-        .html()
-        .split('<');
-    header[0] = '&empty;';
-    $('.headerCell_12').html(header.join('<'));
-
-
-    //get price level gather by browse view
-    list = $($.find('.sellerTable .col_0'));
+    // get price level gather by browse view
+    list = $($.find('.sellerTable td:nth-child(2)'));
     $.each(list, function (index, value) {
         var $elem = $(value),
             $row = $($elem.parent()),
-            $level = $row.find('.col_3'),
+            $level = $row.find(':nth-child(4)'),
             name = $elem.text().split('(')[0].trim(),
             level = localStorage.getItem('seller:' + name) || undefined;
         if (level) {
