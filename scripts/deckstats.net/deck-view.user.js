@@ -2,7 +2,7 @@
 // @name         deck view: different tweaks
 // @description  deckstats.net
 // @grant        none
-// @version      1.0.3
+// @version      1.0.4
 // @icon         http://www.google.com/s2/favicons?domain=www.deckstats.net
 // @namespace    https://github.com/solygen/userscripts
 // @repository   https://github.com/solygen/userscripts.git
@@ -10,6 +10,7 @@
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 //
 // @include      http://deckstats.net/*
+// @include      https://deckstats.net/*
 //
 // @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/deckstats.net/deck-view.user.js
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/deckstats.net/deck-view.user.js
