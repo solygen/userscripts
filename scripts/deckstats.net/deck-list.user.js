@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         deck list: sort your deck list by name and hide timestamp
 // @description  deckstats.net
-// @version      1.0.0
+// @version      1.0.1
 // @grant        none
 // @icon         http://www.google.com/s2/favicons?domain=www.deckstats.net
 // @namespace    https://github.com/solygen/userscripts
@@ -10,6 +10,7 @@
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 //
 // @include      http://deckstats.net/decks/*
+// @include      https://deckstats.net/decks/*
 //
 // @updateURL    https://rawgithub.com/solygen/userscripts/master/scripts/deckstats.net/deck-list.user.js
 // @downloadURL  https://rawgithub.com/solygen/userscripts/master/scripts/deckstats.net/deck-list.user.js
